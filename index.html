@@ -4,74 +4,176 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Terms of Use – Edison Labs</title>
+  <title>Edison Labs LLC – Company & Product Structure</title>
 
   <style>
     :root {
       --bg: #000000;
-      --card-bg: #101010;
-      --card-border: rgba(255, 255, 255, 0.05);
-      --accent: #4cc3ff;      /* Juice neon blue */
+      --card-bg: #0b0b10;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #4cc3ff;          /* Edison / Juice neon blue */
+      --accent-soft: rgba(76, 195, 255, 0.16);
       --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
     }
 
-    /* Page background + centering */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 32px 12px;
-      background:
-        radial-gradient(circle at top, rgba(76, 195, 255, 0.10), transparent 55%),
-        var(--bg);
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      color: var(--text-main);
+      min-height: 100vh;
       display: flex;
       justify-content: center;
-      box-sizing: border-box;
+      background:
+        radial-gradient(circle at top, rgba(76, 195, 255, 0.16), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #000000);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      color: var(--text-main);
     }
 
-    /* Outer wrapper so card shrinks on mobile */
     .doc-container {
       width: 100%;
-      max-width: 900px;
+      max-width: 920px;
     }
 
-    /* The actual card */
     .doc-card {
       background-color: var(--card-bg);
-      border-radius: 16px;
-      padding: 32px 24px;
+      border-radius: 20px;
+      padding: 28px 24px 32px;
       border: 1px solid var(--card-border);
-      box-shadow: 0 0 40px rgba(76, 195, 255, 0.18); /* blue glow */
-      box-sizing: border-box;
+      box-shadow:
+        0 0 40px rgba(15, 23, 42, 0.9),
+        0 0 46px rgba(76, 195, 255, 0.18);
       overflow-wrap: break-word;
+      position: relative;
     }
 
-    /* Headings */
-    h1, h2, h3 {
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 12px;
+    .doc-glow-ring {
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      pointer-events: none;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(145deg, rgba(76, 195, 255, 0.55), transparent 45%, rgba(76, 195, 255, 0.22)) border-box;
+      opacity: 0.18;
+      z-index: -1;
     }
 
-    /* Make preformatted legal text wrap inside the card */
-    pre {
+    .doc-header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .doc-pill {
+      align-self: flex-start;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    h1 {
       margin: 0;
-      white-space: pre-wrap;   /* KEY: wrap long lines */
-      word-wrap: break-word;   /* break long words if needed */
-      font-family: inherit;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .doc-subtitle {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      margin: 20px 0 24px;
+      background: linear-gradient(
+        90deg,
+        rgba(148, 163, 184, 0.1),
+        rgba(76, 195, 255, 0.4),
+        rgba(148, 163, 184, 0.08)
+      );
+    }
+
+    h2 {
+      margin: 22px 0 8px;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 16px 0 4px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 6px 0 10px;
       font-size: 14px;
       line-height: 1.7;
       color: var(--text-main);
     }
 
+    ul {
+      margin: 6px 0 14px 18px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .section-chip {
+      display: inline-flex;
+      padding: 2px 8px;
+      margin-bottom: 4px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-muted);
+    }
+
+    .contact-box {
+      margin-top: 20px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 13px;
+    }
+
     @media (max-width: 600px) {
       body {
-        padding: 24px 8px;
+        padding: 20px 10px;
       }
       .doc-card {
-        padding: 24px 16px;
+        padding: 22px 16px 26px;
       }
-      pre {
+      h1 {
+        font-size: 20px;
+      }
+      p, li {
         font-size: 13px;
       }
     }
@@ -81,68 +183,102 @@
 <body>
   <div class="doc-container">
     <div class="doc-card">
-<pre>
-Company Structure
+      <div class="doc-glow-ring"></div>
 
-Legal Entity (Parent Company)
-Edison Labs LLC
+      <header class="doc-header">
+        <div class="doc-pill">Edison Labs LLC</div>
+        <h1>Company &amp; Product Structure</h1>
+        <p class="doc-subtitle">
+          Legal framing for Edison Labs LLC and its products, including The Juice.
+        </p>
+      </header>
 
-Products
+      <div class="divider"></div>
 
-The Juice — a peer-to-peer, on-chain application developed and operated by Edison Labs LLC
+      <!-- Company Structure -->
+      <section>
+        <h2>Company Structure</h2>
 
-Each product may have its own brand, interface, and domain, while remaining under a single, unified company structure.
+        <span class="section-chip">Legal Entity (Parent Company)</span>
+        <p>Edison Labs LLC</p>
 
-The Juice
+        <h3>Products</h3>
+        <p>
+          The Juice — a peer-to-peer, on-chain application developed and operated by Edison Labs LLC.
+        </p>
+        <p>
+          Each product may have its own brand, interface, and domain, while remaining under a single, unified company structure.
+        </p>
 
-The Juice is the first product built by Edison Labs LLC.
+        <h3>The Juice</h3>
+        <p>
+          The Juice is the first product built by Edison Labs LLC.
+        </p>
+        <p>
+          It is an experimental, blockchain-based application that enables users to interact directly with smart contracts for peer-to-peer outcomes.
+          The Juice operates as a standalone product with its own interface and disclosures.
+        </p>
+        <p>
+          The Juice is a product of Edison Labs LLC.
+        </p>
+      </section>
 
-It is an experimental, blockchain-based application that enables users to interact directly with smart contracts for peer-to-peer outcomes.
-The Juice operates as a standalone product with its own interface and disclosures.
+      <!-- How We Operate -->
+      <section>
+        <h2>How We Operate</h2>
 
-The Juice is a product of Edison Labs LLC.
+        <ul>
+          <li>One legal entity: Edison Labs LLC</li>
+          <li>Multiple products over time</li>
+          <li>No custodial control of user assets</li>
+          <li>Products are experimental by design</li>
+          <li>Clear separation between company and product branding</li>
+        </ul>
 
-How We Operate
+        <p>
+          This structure allows Edison Labs to responsibly build, test, and iterate on new tools without fragmenting ownership or forming unnecessary entities.
+        </p>
+      </section>
 
-One legal entity: Edison Labs LLC
+      <!-- Philosophy -->
+      <section>
+        <h2>Philosophy</h2>
 
-Multiple products over time
+        <p>
+          Edison Labs is built around a simple idea:
+        </p>
+        <p>
+          Good software studios should experiment quickly, ship transparently, and remain structurally sound.
+        </p>
 
-No custodial control of user assets
+        <p>We focus on:</p>
+        <ul>
+          <li>clean architecture</li>
+          <li>minimal intermediaries</li>
+          <li>clear product boundaries</li>
+          <li>long-term flexibility</li>
+        </ul>
+      </section>
 
-Products are experimental by design
+      <!-- Legal Notice -->
+      <section>
+        <h2>Legal Notice</h2>
 
-Clear separation between company and product branding
+        <p>
+          Edison Labs LLC is a technology studio and software developer.
+          References to specific applications or interfaces (including The Juice) refer to products developed and operated by Edison Labs LLC.
+        </p>
+      </section>
 
-This structure allows Edison Labs to responsibly build, test, and iterate on new tools without fragmenting ownership or forming unnecessary entities.
+      <!-- Contact -->
+      <section>
+        <h2>Contact</h2>
 
-Philosophy
-
-Edison Labs is built around a simple idea:
-
-Good software studios should experiment quickly, ship transparently, and remain structurally sound.
-
-We focus on:
-
-clean architecture
-
-minimal intermediaries
-
-clear product boundaries
-
-long-term flexibility
-
-Legal Notice
-
-Edison Labs LLC is a technology studio and software developer.
-References to specific applications or interfaces (including The Juice) refer to products developed and operated by Edison Labs LLC.
-
-Contact
-
-For general inquiries:
-arrakeensubstack@gmail.com
-  
-</pre>
+        <div class="contact-box">
+          <p class="muted">For general inquiries:</p>
+          <p>arrakeensubstack@gmail.com</p>
+        </div>
+      </section>
     </div>
   </div>
 </body>
