@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Terms of Use – Edison Labs</title>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --card-bg: #101010;
+      --card-border: rgba(255, 255, 255, 0.05);
+      --accent: #4cc3ff;      /* Juice neon blue */
+      --text-main: #e2e8f0;
+    }
+
+    /* Page background + centering */
+    body {
+      margin: 0;
+      padding: 32px 12px;
+      background:
+        radial-gradient(circle at top, rgba(76, 195, 255, 0.10), transparent 55%),
+        var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* Outer wrapper so card shrinks on mobile */
+    .doc-container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* The actual card */
+    .doc-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 32px 24px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 0 40px rgba(76, 195, 255, 0.18); /* blue glow */
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    /* Make preformatted legal text wrap inside the card */
+    pre {
+      margin: 0;
+      white-space: pre-wrap;   /* KEY: wrap long lines */
+      word-wrap: break-word;   /* break long words if needed */
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 8px;
+      }
+      .doc-card {
+        padding: 24px 16px;
+      }
+      pre {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-container">
+    <div class="doc-card">
+<pre>
+About Edison Labs
+
+Edison Labs LLC develops software and digital tools, including blockchain-based applications, digital asset operations, and experimental technology projects. The studio focuses on building secure, user-friendly interfaces that make on-chain experiences more approachable, transparent, and fun.
+
+The Juice is one of our flagship experiments: a simple, non-custodial challenge and escrow tool that lets participants lock funds into a smart contract and submit outcomes on-chain. Our goal is to explore how peer-to-peer coordination, transparent rules, and smart contracts can be used to create new types of digital experiences.
+
+Edison Labs operates as a lean, experiment-first software studio. We iterate in public, ship small, and treat everything we build as a live, evolving prototype. Nothing we ship is financial, legal, or gambling advice — it’s software for people who want to explore what’s possible with digital assets and modern blockchain networks.
+</pre>
+    </div>
+  </div>
+</body>
+</html>
