@@ -69,6 +69,17 @@
       gap: 10px;
       margin-bottom: 24px;
     }
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doc-logo {
+  height: 38px;
+  width: auto;
+  filter: drop-shadow(0 0 10px rgba(76, 195, 255, 0.35));
+}
 
     .doc-pill {
       align-self: flex-start;
@@ -176,6 +187,8 @@
       p, li {
         font-size: 13px;
       }
+      .doc-logo {
+        height: 32px;
     }
   </style>
 </head>
@@ -185,13 +198,19 @@
     <div class="doc-card">
       <div class="doc-glow-ring"></div>
 
-      <header class="doc-header">
-        <div class="doc-pill">Edison Labs LLC</div>
-        <h1>Company &amp; Product Structure</h1>
-        <p class="doc-subtitle">
-          Legal framing for Edison Labs LLC and its products, including The Juice.
-        </p>
-      </header>
+<header class="doc-header">
+  <div class="doc-pill">Edison Labs LLC</div>
+
+  <div class="title-row">
+    <img src="logo.png" alt="Edison Labs Logo" class="doc-logo" />
+    <h1>Company &amp; Product Structure</h1>
+  </div>
+
+  <p class="doc-subtitle">
+    Legal framing for Edison Labs LLC and its products, including The Juice.
+  </p>
+</header>
+
 
       <div class="divider"></div>
 
