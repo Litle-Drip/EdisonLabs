@@ -19,7 +19,6 @@
   <meta name="twitter:image" content="https://edison-labs.com/og-image.png" />
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-
   <style>
     :root {
       --bg: #000000;
@@ -59,12 +58,11 @@
       padding: 28px 24px 32px;
       border: 1px solid var(--card-border);
       box-shadow:
-        0 0 40px rgba(15, 23, 42, 0.9),
-        0 0 46px rgba(76, 195, 255, 0.18);
+        0 0 26px rgba(15, 23, 42, 0.9),
+        0 0 40px rgba(76, 195, 255, 0.14);
       overflow-wrap: break-word;
       position: relative;
 
-      /* center inner content block */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -86,7 +84,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
       width: 100%;
       max-width: 700px;
     }
@@ -128,10 +126,28 @@
       text-align: center;
     }
 
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .meta-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
     .divider {
       height: 1px;
       width: 100%;
-      margin: 20px 0 24px;
+      margin: 18px 0 20px;
       background: linear-gradient(
         90deg,
         rgba(148, 163, 184, 0.1),
@@ -140,10 +156,62 @@
       );
     }
 
-    /* centered content column */
-    .doc-content {
+    .doc-inner {
       width: 100%;
       max-width: 700px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    /* TOC */
+    .doc-toc {
+      flex: 0 0 190px;
+      font-size: 12px;
+      position: sticky;
+      top: 20px;
+    }
+
+    .toc-card {
+      border-radius: 14px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.92));
+      padding: 10px 12px;
+    }
+
+    .toc-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-list li {
+      margin-bottom: 4px;
+    }
+
+    .toc-list a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .toc-list a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .doc-content {
+      flex: 1;
+      min-width: 0;
     }
 
     h2 {
@@ -176,7 +244,6 @@
       line-height: 1.7;
     }
 
-    /* center lists as a block but keep text left */
     .doc-content ul {
       display: inline-block;
       text-align: left;
@@ -213,6 +280,44 @@
       font-size: 13px;
     }
 
+    .related-docs {
+      margin-top: 22px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 13px;
+    }
+
+    .related-docs a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .related-docs a:hover {
+      text-decoration: underline;
+    }
+
+    footer.doc-footer {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(148, 163, 184, 0.26);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .doc-inner {
+        flex-direction: column;
+      }
+      .doc-toc {
+        position: static;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 20px 10px;
@@ -240,7 +345,7 @@
       <div class="doc-glow-ring"></div>
 
       <header class="doc-header">
-        <div class="doc-pill">Edison Labs LLC</div>
+        <div class="doc-pill">Edison Labs LLC – Legal Documentation</div>
 
         <div class="title-row">
           <img src="logo.png" alt="Edison Labs Logo" class="doc-logo" />
@@ -250,95 +355,152 @@
         <p class="doc-subtitle">
           Legal framing for Edison Labs LLC and its products, including The Juice.
         </p>
+
+        <div class="meta-row">
+          <div class="meta-pill">Document Version: 1.0</div>
+          <div class="meta-pill">Last Updated: December 4, 2025</div>
+        </div>
       </header>
 
       <div class="divider"></div>
 
-      <div class="doc-content">
-        <!-- Company Structure -->
-        <section>
-          <h2>Company Structure</h2>
-
-          <span class="section-chip">Legal Entity (Parent Company)</span>
-          <p>Edison Labs LLC</p>
-
-          <h3>Products</h3>
-          <p>
-            The Juice — a peer-to-peer, on-chain application developed and operated by Edison Labs LLC.
-          </p>
-          <p>
-            Each product may have its own brand, interface, and domain, while remaining under a single, unified company structure.
-          </p>
-
-          <h3>The Juice</h3>
-          <p>
-            The Juice is the first product built by Edison Labs LLC.
-          </p>
-          <p>
-            It is an experimental, blockchain-based application that enables users to interact directly with smart contracts for peer-to-peer outcomes.
-            The Juice operates as a standalone product with its own interface and disclosures.
-          </p>
-          <p>
-            The Juice is a product of Edison Labs LLC.
-          </p>
-        </section>
-
-        <!-- How We Operate -->
-        <section>
-          <h2>How We Operate</h2>
-
-          <ul>
-            <li>One legal entity: Edison Labs LLC</li>
-            <li>Multiple products over time</li>
-            <li>No custodial control of user assets</li>
-            <li>Products are experimental by design</li>
-            <li>Clear separation between company and product branding</li>
-          </ul>
-
-          <p>
-            This structure allows Edison Labs to responsibly build, test, and iterate on new tools without fragmenting ownership or forming unnecessary entities.
-          </p>
-        </section>
-
-        <!-- Philosophy -->
-        <section>
-          <h2>Philosophy</h2>
-
-          <p>
-            Edison Labs is built around a simple idea:
-          </p>
-          <p>
-            Good software studios should experiment quickly, ship transparently, and remain structurally sound.
-          </p>
-
-          <p>We focus on:</p>
-          <ul>
-            <li>clean architecture</li>
-            <li>minimal intermediaries</li>
-            <li>clear product boundaries</li>
-            <li>long-term flexibility</li>
-          </ul>
-        </section>
-
-        <!-- Legal Notice -->
-        <section>
-          <h2>Legal Notice</h2>
-
-          <p>
-            Edison Labs LLC is a technology studio and software developer.
-            References to specific applications or interfaces (including The Juice) refer to products developed and operated by Edison Labs LLC.
-          </p>
-        </section>
-
-        <!-- Contact -->
-        <section>
-          <h2>Contact</h2>
-
-          <div class="contact-box">
-            <p class="muted">For general inquiries:</p>
-            <p>edisonlabschicago@gmail.com</p>
+      <div class="doc-inner">
+        <!-- Table of Contents -->
+        <aside class="doc-toc">
+          <div class="toc-card">
+            <div class="toc-title">Contents</div>
+            <ul class="toc-list">
+              <li><a href="#company-structure">Company Structure</a></li>
+              <li><a href="#how-we-operate">How We Operate</a></li>
+              <li><a href="#philosophy">Philosophy</a></li>
+              <li><a href="#legal-notice">Legal Notice</a></li>
+              <li><a href="#disclaimers">Disclaimers</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
           </div>
-        </section>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="doc-content">
+          <!-- Company Structure -->
+          <section id="company-structure">
+            <h2>Company Structure</h2>
+
+            <span class="section-chip">Legal Entity (Parent Company)</span>
+            <p>Edison Labs LLC</p>
+
+            <h3>Products</h3>
+            <p>
+              The Juice — a peer-to-peer, on-chain application developed and operated by Edison Labs LLC.
+            </p>
+            <p>
+              Each product may have its own brand, interface, and domain, while remaining under a single, unified company structure.
+            </p>
+
+            <h3>The Juice</h3>
+            <p>
+              The Juice is the first product built by Edison Labs LLC.
+            </p>
+            <p>
+              It is an experimental, blockchain-based application that enables users to interact directly with smart contracts for peer-to-peer outcomes.
+              The Juice operates as a standalone product with its own interface and disclosures.
+            </p>
+            <p>
+              The Juice is a product of Edison Labs LLC.
+            </p>
+          </section>
+
+          <!-- How We Operate -->
+          <section id="how-we-operate">
+            <h2>How We Operate</h2>
+
+            <ul>
+              <li>One legal entity: Edison Labs LLC</li>
+              <li>Multiple products over time</li>
+              <li>No custodial control of user assets</li>
+              <li>Products are experimental by design</li>
+              <li>Clear separation between company and product branding</li>
+            </ul>
+
+            <p>
+              This structure allows Edison Labs to responsibly build, test, and iterate on new tools without fragmenting ownership or forming unnecessary entities.
+            </p>
+          </section>
+
+          <!-- Philosophy -->
+          <section id="philosophy">
+            <h2>Philosophy</h2>
+
+            <p>
+              Edison Labs is built around a simple idea:
+            </p>
+            <p>
+              Good software studios should experiment quickly, ship transparently, and remain structurally sound.
+            </p>
+
+            <p>We focus on:</p>
+            <ul>
+              <li>clean architecture</li>
+              <li>minimal intermediaries</li>
+              <li>clear product boundaries</li>
+              <li>long-term flexibility</li>
+            </ul>
+          </section>
+
+          <!-- Legal Notice -->
+          <section id="legal-notice">
+            <h2>Legal Notice</h2>
+
+            <p>
+              Edison Labs LLC is a technology studio and software developer.
+              References to specific applications or interfaces (including The Juice) refer to products developed and operated by Edison Labs LLC.
+            </p>
+          </section>
+
+          <!-- Disclaimers -->
+          <section id="disclaimers">
+            <h2>Disclaimers</h2>
+
+            <p class="muted">
+              The information on this page is provided for general informational purposes only and does not constitute legal, financial, or investment advice.
+            </p>
+            <ul>
+              <li>All Edison Labs products, including The Juice, are experimental software.</li>
+              <li>Use of any product is at the user’s own risk and discretion.</li>
+              <li>Edison Labs LLC does not provide brokerage, custody, or advisory services.</li>
+              <li>No guarantee is made regarding uptime, availability, or continued operation of any interface or smart contract.</li>
+              <li>Nothing on this page modifies or replaces any formal Terms of Use, Privacy Policy, or other written agreements that may apply.</li>
+            </ul>
+
+            <div class="related-docs">
+              <p class="muted">Related documentation (links may be updated as documents are published):</p>
+              <ul>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="risk.html">Risk Disclosure</a></li>
+                <li><a href="experimental.html">Experimental Software Warning</a></li>
+              </ul>
+              <!-- Update href values to match your actual file names/paths -->
+            </div>
+          </section>
+
+          <!-- Contact -->
+          <section id="contact">
+            <h2>Contact</h2>
+
+            <div class="contact-box">
+              <p class="muted">For general inquiries regarding Edison Labs LLC or this document:</p>
+              <p>edisonlabschicago@gmail.com</p>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="doc-footer">
+            Edison Labs LLC is a Chicago-based software development studio focused on experimental, non-custodial tools. <br />
+            All products are provided “as is” without warranties of any kind, express or implied. <br />
+            © 2025 Edison Labs LLC. All rights reserved.
+          </footer>
+        </main>
       </div>
     </div>
   </div>
