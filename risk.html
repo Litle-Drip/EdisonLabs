@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Terms of Use – Edison Labs</title>
+
+  <style>
+    :root {
+      --bg: #000000;
+      --card-bg: #101010;
+      --card-border: rgba(255, 255, 255, 0.05);
+      --accent: #4cc3ff;      /* Juice neon blue */
+      --text-main: #e2e8f0;
+    }
+
+    /* Page background + centering */
+    body {
+      margin: 0;
+      padding: 32px 12px;
+      background:
+        radial-gradient(circle at top, rgba(76, 195, 255, 0.10), transparent 55%),
+        var(--bg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    /* Outer wrapper so card shrinks on mobile */
+    .doc-container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* The actual card */
+    .doc-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 32px 24px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 0 40px rgba(76, 195, 255, 0.18); /* blue glow */
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+    }
+
+    /* Headings */
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    /* Make preformatted legal text wrap inside the card */
+    pre {
+      margin: 0;
+      white-space: pre-wrap;   /* KEY: wrap long lines */
+      word-wrap: break-word;   /* break long words if needed */
+      font-family: inherit;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text-main);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 24px 8px;
+      }
+      .doc-card {
+        padding: 24px 16px;
+      }
+      pre {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="doc-container">
+    <div class="doc-card">
+<pre>
+Last updated: 12/4/2025
+
+Using The Juice and related tools from Edison Labs LLC involves significant risks. By interacting with our website, smart contracts, or any associated services, you acknowledge and accept the following:
+
+1. Digital Asset Risk  
+Digital assets are highly volatile and may lose some or all of their value. You should not use funds you cannot afford to lose.
+
+2. Smart Contract & Technical Risk  
+Smart contracts are experimental software. They may contain bugs, vulnerabilities, or behave in unexpected ways. Interacting with them can lead to permanent loss of funds.
+
+3. Irreversible Transactions  
+Blockchain transactions are generally irreversible. Once a transaction is broadcast and confirmed, it cannot be undone, reversed, or forcibly refunded.
+
+4. Network & Infrastructure Risk  
+Congestion, forks, failed transactions, RPC outages, or chain-level issues can impact your experience and may lead to stuck, delayed, or more expensive transactions.
+
+5. Legal & Regulatory Risk  
+Rules related to digital assets, contests, and wagering differ by jurisdiction and may change over time. You are solely responsible for understanding and complying with laws that apply to you.
+
+6. No Guarantees or Insurance  
+There is no guarantee of uptime, availability, performance, or security. There is no insurance or guaranteed recovery if funds are lost.
+
+By using The Juice or any tool operated by Edison Labs LLC, you agree that you understand these risks and are using the Service entirely at your own risk and discretion.
+</pre>
+    </div>
+  </div>
+</body>
+</html>
