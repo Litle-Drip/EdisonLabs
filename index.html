@@ -159,56 +159,8 @@
     .doc-inner {
       width: 100%;
       max-width: 700px;
-      display: flex;
-      gap: 18px;
-      align-items: flex-start;
     }
-
-    /* TOC */
-    .doc-toc {
-      flex: 0 0 190px;
-      font-size: 12px;
-      position: sticky;
-      top: 20px;
-    }
-
-    .toc-card {
-      border-radius: 14px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: radial-gradient(circle at top, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.92));
-      padding: 10px 12px;
-    }
-
-    .toc-title {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-
-    .toc-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .toc-list li {
-      margin-bottom: 4px;
-    }
-
-    .toc-list a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 12px;
-      opacity: 0.8;
-    }
-
-    .toc-list a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
-
+    
     .doc-content {
       flex: 1;
       min-width: 0;
@@ -365,20 +317,6 @@
       <div class="divider"></div>
 
       <div class="doc-inner">
-        <!-- Table of Contents -->
-        <aside class="doc-toc">
-          <div class="toc-card">
-            <div class="toc-title">Contents</div>
-            <ul class="toc-list">
-              <li><a href="#company-structure">Company Structure</a></li>
-              <li><a href="#how-we-operate">How We Operate</a></li>
-              <li><a href="#philosophy">Philosophy</a></li>
-              <li><a href="#legal-notice">Legal Notice</a></li>
-              <li><a href="#disclaimers">Disclaimers</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
-          </div>
-        </aside>
 
         <!-- Main Content -->
         <main class="doc-content">
