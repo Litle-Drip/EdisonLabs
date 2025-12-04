@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Edison Labs LLC – Company & Product Structure</title>
+
   <!-- Open Graph / Link Preview -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Edison Labs LLC — Company & Product Structure" />
@@ -17,6 +18,8 @@
   <meta name="twitter:title" content="Edison Labs LLC — Company & Product Structure" />
   <meta name="twitter:description" content="Legal framing for Edison Labs LLC and its products, including The Juice." />
   <meta name="twitter:image" content="https://edison-labs.com/og-image.png" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <style>
@@ -83,16 +86,19 @@
     .doc-header {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 16px;
       width: 100%;
       max-width: 700px;
+      align-items: center;
+      text-align: center;
     }
 
     .title-row {
       display: flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      gap: 14px;
     }
 
     .doc-logo {
@@ -102,13 +108,12 @@
     }
 
     .doc-pill {
-      align-self: flex-start;
-      padding: 3px 10px;
+      padding: 3px 12px;
       border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      background: rgba(15, 23, 42, 0.9);
-      font-size: 11px;
-      letter-spacing: 0.18em;
+      border: 1px solid rgba(76, 195, 255, 0.25);
+      background: rgba(15, 23, 42, 0.65);
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text-muted);
     }
@@ -120,21 +125,22 @@
     }
 
     .doc-subtitle {
-      margin: 0;
+      margin-top: 2px;
       font-size: 13px;
+      line-height: 1.6;
       color: var(--text-muted);
-      text-align: center;
+      max-width: 560px;
     }
 
     .meta-row {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-top: 10px;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
       color: var(--text-muted);
+      opacity: 0.85;
     }
 
     .meta-pill {
@@ -147,12 +153,12 @@
     .divider {
       height: 1px;
       width: 100%;
-      margin: 18px 0 20px;
+      margin: 14px 0 18px;
       background: linear-gradient(
         90deg,
-        rgba(148, 163, 184, 0.1),
-        rgba(76, 195, 255, 0.4),
-        rgba(148, 163, 184, 0.08)
+        rgba(148, 163, 184, 0.08),
+        rgba(76, 195, 255, 0.35),
+        rgba(148, 163, 184, 0.06)
       );
     }
 
@@ -262,11 +268,7 @@
 
     @media (max-width: 768px) {
       .doc-inner {
-        flex-direction: column;
-      }
-      .doc-toc {
-        position: static;
-        width: 100%;
+        max-width: 100%;
       }
     }
 
@@ -317,8 +319,6 @@
       <div class="divider"></div>
 
       <div class="doc-inner">
-
-        <!-- Main Content -->
         <main class="doc-content">
           <!-- Company Structure -->
           <section id="company-structure">
