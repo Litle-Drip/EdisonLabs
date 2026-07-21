@@ -4,501 +4,838 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Edison Labs LLC – Company & Product Structure</title>
+  <title>Edison Labs LLC — Software Studio</title>
 
   <!-- Open Graph / Link Preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Edison Labs LLC — Company & Product Structure" />
-  <meta property="og:description" content="Legal framing for Edison Labs LLC and its products, including The Juice." />
+  <meta property="og:title" content="Edison Labs LLC — Software Studio" />
+  <meta property="og:description" content="Edison Labs builds experimental, non-custodial products at the intersection of technology and decentralized systems." />
   <meta property="og:image" content="https://edison-labs.com/og-image.png" />
-  <meta property="og:url" content="https://edison-labs.com/edison.html" />
+  <meta property="og:url" content="https://edison-labs.com/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Edison Labs LLC — Company & Product Structure" />
-  <meta name="twitter:description" content="Legal framing for Edison Labs LLC and its products, including The Juice." />
+  <meta name="twitter:title" content="Edison Labs LLC — Software Studio" />
+  <meta name="twitter:description" content="Edison Labs builds experimental, non-custodial products at the intersection of technology and decentralized systems." />
   <meta name="twitter:image" content="https://edison-labs.com/og-image.png" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #000000;
       --card-bg: #0b0b10;
-      --card-border: rgba(255, 255, 255, 0.08);
-      --accent: #4cc3ff;          /* Edison / Juice neon blue */
-      --accent-soft: rgba(76, 195, 255, 0.16);
+      --card-border: rgba(76, 195, 255, 0.2);
+      --accent: #4cc3ff;
+      --accent-soft: rgba(76, 195, 255, 0.10);
       --text-main: #e2e8f0;
       --text-muted: #94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
 
     body {
-      margin: 0;
-      padding: 32px 12px;
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Backgrounds ─────────────────────────────────────── */
+    .hero-glow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 800px;
+      background: radial-gradient(circle at 50% 0%, rgba(76, 195, 255, 0.13), transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .dot-pattern {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      padding: 24px 0;
+      transition: background 0.3s, border-color 0.3s, padding 0.3s;
+    }
+    .site-nav.scrolled {
+      background: rgba(0,0,0,0.80);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(76, 195, 255, 0.2);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .nav-logo img {
+      width: 32px; height: 32px;
+      object-fit: contain;
+    }
+    .nav-logo span {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    #hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
-      background:
-        radial-gradient(circle at top, rgba(76, 195, 255, 0.16), transparent 55%),
-        radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #000000);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
-      color: var(--text-main);
+      align-items: center;
+      padding-top: 80px;
+      overflow: hidden;
+      z-index: 1;
     }
-
-    .doc-container {
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
       width: 100%;
-      max-width: 920px;
-    }
-
-    .doc-card {
-      background-color: var(--card-bg);
-      border-radius: 20px;
-      padding: 28px 24px 32px;
-      border: 1px solid var(--card-border);
-      box-shadow:
-        0 0 26px rgba(15, 23, 42, 0.9),
-        0 0 40px rgba(76, 195, 255, 0.14);
-      overflow-wrap: break-word;
       position: relative;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      z-index: 2;
     }
-
-    .doc-glow-ring {
-      position: absolute;
-      inset: -1px;
-      border-radius: 20px;
-      pointer-events: none;
-      border: 1px solid transparent;
-      background:
-        linear-gradient(145deg, rgba(76, 195, 255, 0.55), transparent 45%, rgba(76, 195, 255, 0.22)) border-box;
-      opacity: 0.18;
-      z-index: -1;
-    }
-
-    .doc-header {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 16px;
-      width: 100%;
-      max-width: 700px;
-      align-items: center;
-      text-align: center;
-    }
-
-    .title-row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 14px;
-    }
-
-    .doc-logo {
-      height: 38px;
-      width: auto;
-      filter: drop-shadow(0 0 10px rgba(76, 195, 255, 0.35));
-    }
-
-    .doc-pill {
-      padding: 3px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(76, 195, 255, 0.25);
-      background: rgba(15, 23, 42, 0.65);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 0.04em;
-    }
-
-    .doc-subtitle {
-      margin-top: 2px;
-      font-size: 13px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      max-width: 560px;
-    }
-
-    .meta-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 6px;
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      color: var(--text-muted);
-      opacity: 0.85;
-    }
-
-    .meta-pill {
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      background: rgba(15, 23, 42, 0.85);
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      margin: 14px 0 18px;
-      background: linear-gradient(
-        90deg,
-        rgba(148, 163, 184, 0.08),
-        rgba(76, 195, 255, 0.35),
-        rgba(148, 163, 184, 0.06)
-      );
-    }
-
-    .doc-inner {
-      width: 100%;
-      max-width: 700px;
-    }
-    
-    .doc-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    h2 {
-      margin: 22px 0 8px;
-      font-size: 15px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent);
-      text-align: center;
-    }
-
-    h3 {
-      margin: 16px 0 4px;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    p {
-      margin: 6px 0 10px;
-      font-size: 14px;
-      line-height: 1.7;
-      color: var(--text-main);
-    }
-
-    ul {
-      margin: 6px 0 14px 18px;
-      padding: 0;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .doc-content ul {
-      display: inline-block;
-      text-align: left;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    li {
-      margin-bottom: 4px;
-    }
-
-    .muted {
-      color: var(--text-muted);
-    }
-
-    .section-chip {
+    .hero-badge {
       display: inline-flex;
-      padding: 2px 8px;
-      margin-bottom: 4px;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
       border-radius: 999px;
-      border: 1px solid var(--accent-soft);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.13em;
-      color: var(--text-muted);
-    }
-
-    .contact-box {
-      margin-top: 20px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      font-size: 13px;
-    }
-
-    .related-docs {
-      margin-top: 22px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px dashed rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.7);
-      font-size: 13px;
-    }
-
-    .related-docs a {
+      border: 1px solid rgba(76, 195, 255, 0.3);
+      background: rgba(76, 195, 255, 0.10);
       color: var(--accent);
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 32px;
+      backdrop-filter: blur(6px);
+    }
+    .hero-badge-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.9); }
+    }
+    h1.hero-title {
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .hero-title .grad {
+      background: linear-gradient(to right, #fff, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-title .accent {
+      color: var(--accent);
+      text-shadow: 0 0 20px rgba(76, 195, 255, 0.5);
+    }
+    .hero-sub {
+      font-size: clamp(16px, 2.2vw, 22px);
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.6;
+      max-width: 620px;
+      margin-bottom: 48px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: var(--accent);
+      color: #000;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.3s;
       text-decoration: none;
     }
-
-    .related-docs a:hover {
-      text-decoration: underline;
+    .btn-primary:hover {
+      background: #3bb1f0;
+      box-shadow: 0 0 30px rgba(76, 195, 255, 0.4);
     }
+    .btn-primary svg { transition: transform 0.2s; }
+    .btn-primary:hover svg { transform: translateX(3px); }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      background: transparent;
+      color: #fff;
+      font-weight: 700;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      text-decoration: none;
+      backdrop-filter: blur(6px);
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    /* Decorative orbits */
+    .orbit {
+      position: absolute;
+      right: -60px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      border: 1px solid rgba(76, 195, 255, 0.1);
+      opacity: 0.3;
+    }
+    .orbit-1 { width: 600px; height: 600px; animation: spin 60s linear infinite; }
+    .orbit-2 { width: 400px; height: 400px; border-color: rgba(76, 195, 255, 0.2); opacity: 0.4; animation: spin 40s linear infinite reverse; }
+    @keyframes spin { from { transform: translateY(-50%) rotate(0deg); } to { transform: translateY(-50%) rotate(360deg); } }
 
-    footer.doc-footer {
-      margin-top: 26px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(148, 163, 184, 0.26);
+    /* ── Products ────────────────────────────────────────── */
+    #products {
+      position: relative;
+      z-index: 1;
+      padding: 128px 0;
+    }
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+    .section-header h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      white-space: nowrap;
+    }
+    .section-line {
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(to right, rgba(76, 195, 255, 0.3), transparent);
+      margin-left: 16px;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px rgba(76, 195, 255, 0.15);
+    }
+    .card-glow {
+      position: absolute;
+      top: 0; right: 0;
+      width: 128px; height: 128px;
+      background: rgba(76, 195, 255, 0.05);
+      border-radius: 0 0 0 100%;
+      filter: blur(24px);
+      transition: background 0.4s;
+    }
+    .product-card:hover .card-glow {
+      background: rgba(76, 195, 255, 0.10);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      position: relative; z-index: 1;
+    }
+    .card-icon {
+      width: 56px; height: 56px;
+      background: rgba(76, 195, 255, 0.10);
+      border: 1px solid rgba(76, 195, 255, 0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+    .card-icon svg {
+      filter: drop-shadow(0 0 6px rgba(76, 195, 255, 0.7));
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #4ade80;
       font-size: 11px;
+      font-weight: 500;
+    }
+    .status-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .card-name-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      position: relative; z-index: 1;
+    }
+    .card-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .card-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(76, 195, 255, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(76, 195, 255, 0.2);
+    }
+    .card-desc {
       color: var(--text-muted);
-      text-align: center;
+      font-size: 14px;
       line-height: 1.7;
+      flex: 1;
+      margin-bottom: 40px;
+      position: relative; z-index: 1;
+    }
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      position: relative; z-index: 1;
+      transition: color 0.15s;
+    }
+    .card-link:hover { color: #fff; }
+    .card-link svg { transition: transform 0.15s; }
+    .card-link:hover svg { transform: translate(2px, -2px); }
+
+    /* ── About ───────────────────────────────────────────── */
+    #about {
+      position: relative;
+      z-index: 1;
+      padding: 128px 0;
+      background: rgba(11, 11, 16, 0.5);
+      border-top: 1px solid rgba(76, 195, 255, 0.1);
+      border-bottom: 1px solid rgba(76, 195, 255, 0.1);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px 96px;
+      align-items: center;
+    }
+    .about-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 24px;
+    }
+    .about-eyebrow svg { flex-shrink: 0; }
+    .about-title {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .about-text { color: var(--text-muted); font-size: 16px; line-height: 1.7; }
+    .about-quote {
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--text-main);
+      border-left: 2px solid var(--accent);
+      padding: 8px 0 8px 24px;
+      margin-bottom: 24px;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pillar {
+      background: #000;
+      border: 1px solid rgba(76, 195, 255, 0.2);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .pillar:hover { border-color: rgba(76, 195, 255, 0.5); }
+    .pillar-icon {
+      color: var(--accent);
+      opacity: 0.7;
+      margin-bottom: 16px;
+      transition: opacity 0.2s;
+    }
+    .pillar:hover .pillar-icon { opacity: 1; }
+    .pillar h4 { font-size: 14px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .pillar p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+    /* ── Contact ─────────────────────────────────────────── */
+    #contact {
+      position: relative;
+      z-index: 1;
+      padding: 128px 0 48px;
+    }
+    .contact-center {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+      text-align: center;
+      margin-bottom: 128px;
+      position: relative; z-index: 1;
+    }
+    .contact-icon {
+      width: 80px; height: 80px;
+      margin: 0 auto 32px;
+      background: rgba(76, 195, 255, 0.10);
+      border: 1px solid rgba(76, 195, 255, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(76, 195, 255, 0.2);
+    }
+    .contact-icon svg { color: var(--accent); }
+    .contact-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .contact-sub {
+      color: var(--text-muted);
+      font-size: 17px;
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: var(--card-bg);
+      border: 1px solid rgba(76, 195, 255, 0.5);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: border-color 0.2s, box-shadow 0.3s;
+    }
+    .email-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 20px rgba(76, 195, 255, 0.3);
+    }
+    .email-btn svg { color: var(--accent); }
+    /* Footer */
+    .site-footer {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 48px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      position: relative; z-index: 1;
+    }
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-left img {
+      width: 18px; height: 18px;
+      object-fit: contain;
+      filter: grayscale(1);
+      opacity: 0.5;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: #fff; }
+    /* Bottom glow */
+    .footer-glow {
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 720px;
+      height: 256px;
+      background: rgba(76, 195, 255, 0.10);
+      filter: blur(100px);
+      border-radius: 50% 50% 0 0;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    @media (max-width: 768px) {
-      .doc-inner {
-        max-width: 100%;
-      }
+    /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .pillars-grid { grid-template-columns: 1fr 1fr; }
     }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 20px 10px;
-      }
-      .doc-card {
-        padding: 22px 16px 26px;
-      }
-      h1 {
-        font-size: 20px;
-      }
-      p,
-      li {
-        font-size: 13px;
-      }
-      .doc-logo {
-        height: 32px;
-      }
+    @media (max-width: 640px) {
+      .nav-inner { padding: 0 20px; }
+      .hero-inner, .section-inner { padding: 0 20px; }
+      .site-footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+      .pillars-grid { grid-template-columns: 1fr; }
+      .orbit { display: none; }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Background decorations -->
+  <div class="hero-glow"></div>
+  <div class="dot-pattern"></div>
+
   <!-- Nav -->
-  <nav style="
-    width: 100%;
-    max-width: 920px;
-    margin: 0 auto 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  ">
-    <a href="index.html" style="
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      color: #e2e8f0;
-    ">
-      <img src="logo.png" alt="Edison Labs Logo" style="
-        height: 28px;
-        width: auto;
-        filter: drop-shadow(0 0 8px rgba(76, 195, 255, 0.3));
-      " />
-      <span style="font-size: 14px; font-weight: 600; letter-spacing: 0.04em;">Edison Labs</span>
-    </a>
-    <div style="display: flex; gap: 6px;">
-      <a href="index.html" style="
-        padding: 5px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #4cc3ff;
-        border: 1px solid rgba(76, 195, 255, 0.3);
-        background: rgba(76, 195, 255, 0.06);
-      ">Home</a>
-      <a href="products.html" style="
-        padding: 5px 14px;
-        border-radius: 999px;
-        font-size: 12px;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: #94a3b8;
-        border: 1px solid transparent;
-      ">Products</a>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">
+        <img src="logo.png" alt="Edison Labs" onerror="this.style.display='none'" />
+        <span>Edison Labs</span>
+      </a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <div class="doc-container">
-    <div class="doc-card">
-      <div class="doc-glow-ring"></div>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span>
+        Chicago · Software Studio
+      </div>
 
-      <header class="doc-header">
-        <div class="doc-pill">Edison Labs LLC – Legal Documentation</div>
+      <h1 class="hero-title">
+        Build.<br>
+        <span class="grad">Ship.</span><br>
+        <span class="accent">Iterate.</span>
+      </h1>
 
-        <div class="title-row">
-          <img src="logo.png" alt="Edison Labs Logo" class="doc-logo" />
-          <h1>Company &amp; Product Structure</h1>
-        </div>
+      <p class="hero-sub">
+        Edison Labs LLC builds experimental, non-custodial products at the intersection of technology and decentralized systems.
+      </p>
 
-        <p class="doc-subtitle">
-          Legal framing for Edison Labs LLC and its products, including The Juice.
-        </p>
-
-        <div class="meta-row">
-          <div class="meta-pill">Document Version: 1.0</div>
-          <div class="meta-pill">Last Updated: December 4, 2025</div>
-        </div>
-      </header>
-
-      <div class="divider"></div>
-
-      <div class="doc-inner">
-        <main class="doc-content">
-          <!-- Company Structure -->
-          <section id="company-structure">
-            <h2>Company Structure</h2>
-
-            <span class="section-chip">Legal Entity (Parent Company)</span>
-            <p>Edison Labs LLC</p>
-
-            <h3>Products</h3>
-            <p>
-              The Juice — a peer-to-peer, on-chain application developed and operated by Edison Labs LLC.
-            </p>
-            <p>
-              Each product may have its own brand, interface, and domain, while remaining under a single, unified company structure.
-            </p>
-
-            <h3>The Juice</h3>
-            <p>
-              The Juice is the first product built by Edison Labs LLC.
-            </p>
-            <p>
-              It is an experimental, blockchain-based application that enables users to interact directly with smart contracts for peer-to-peer outcomes.
-              The Juice operates as a standalone product with its own interface and disclosures.
-            </p>
-            <p>
-              The Juice is a product of Edison Labs LLC.
-            </p>
-            <h3>Predara</h3>
-            <p>
-              Predara is the third product built by Edison Labs LLC.           
-            </p>
-            <p>
-              Predara is an AI-driven prediction market analyzer. It is designed to simplify and analyze contract rules from platforms including Polymarket, Kalshi, Gemini, and Coinbase.
-            </p>
-            <p>
-              Predara is a product of Edison Labs LLC.
-            </p>
-          </section>
-
-          <!-- How We Operate -->
-          <section id="how-we-operate">
-            <h2>How We Operate</h2>
-
-            <ul>
-              <li>One legal entity: Edison Labs LLC</li>
-              <li>Multiple products over time</li>
-              <li>No custodial control of user assets</li>
-              <li>Products are experimental by design</li>
-              <li>Clear separation between company and product branding</li>
-            </ul>
-
-            <p>
-              This structure allows Edison Labs to responsibly build, test, and iterate on new tools without fragmenting ownership or forming unnecessary entities.
-            </p>
-          </section>
-
-          <!-- Philosophy -->
-          <section id="philosophy">
-            <h2>Philosophy</h2>
-
-            <p>
-              Edison Labs is built around a simple idea:
-            </p>
-            <p>
-              Good software studios should experiment quickly, ship transparently, and remain structurally sound.
-            </p>
-
-            <p>We focus on:</p>
-            <ul>
-              <li>clean architecture</li>
-              <li>minimal intermediaries</li>
-              <li>clear product boundaries</li>
-              <li>long-term flexibility</li>
-            </ul>
-          </section>
-
-          <!-- Legal Notice -->
-          <section id="legal-notice">
-            <h2>Legal Notice</h2>
-
-            <p>
-              Edison Labs LLC is a technology studio and software developer.
-              References to specific applications or interfaces (including The Juice) refer to products developed and operated by Edison Labs LLC.
-            </p>
-          </section>
-
-          <!-- Disclaimers -->
-          <section id="disclaimers">
-            <h2>Disclaimers</h2>
-
-            <p class="muted">
-              The information on this page is provided for general informational purposes only and does not constitute legal, financial, or investment advice.
-            </p>
-            <ul>
-              <li>All Edison Labs products, including The Juice, are experimental software.</li>
-              <li>Use of any product is at the user’s own risk and discretion.</li>
-              <li>Edison Labs LLC does not provide brokerage, custody, or advisory services.</li>
-              <li>No guarantee is made regarding uptime, availability, or continued operation of any interface or smart contract.</li>
-              <li>Nothing on this page modifies or replaces any formal Terms of Use, Privacy Policy, or other written agreements that may apply.</li>
-            </ul>
-
-            <div class="related-docs">
-              <p class="muted">Related documentation (links may be updated as documents are published):</p>
-              <ul>
-                <li><a href="terms.html">Terms of Use</a></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="risk.html">Risk Disclosure</a></li>
-              </ul>
-              <!-- Update href values to match your actual file names/paths -->
-            </div>
-          </section>
-
-          <!-- Contact -->
-          <section id="contact">
-            <h2>Contact</h2>
-
-            <div class="contact-box">
-              <p class="muted">For general inquiries regarding Edison Labs LLC or this document:</p>
-              <p>edisonlabschicago@gmail.com</p>
-            </div>
-          </section>
-
-          <!-- Footer -->
-          <footer class="doc-footer">
-            Edison Labs LLC is a Chicago-based software development studio focused on experimental, non-custodial tools. <br />
-            All products are provided “as is” without warranties of any kind, express or implied. <br />
-            © 2025 Edison Labs LLC. All rights reserved.
-          </footer>
-        </main>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#products">
+          Our Products
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn-secondary" href="#about">
+          Learn More
+        </a>
       </div>
     </div>
-  </div>
+
+    <!-- Decorative orbits -->
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>Our Products</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- The Juice -->
+        <div class="product-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="card-name-row">
+            <span class="card-name">The Juice</span>
+            <span class="card-tag">Blockchain · P2P</span>
+          </div>
+          <p class="card-desc">A peer-to-peer, on-chain application enabling direct smart contract interactions for decentralized outcomes. Built for experimentation, not custody.</p>
+          <a class="card-link" href="https://www.thejuiceapp.io/" target="_blank" rel="noopener noreferrer">
+            thejuiceapp.io
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Predara -->
+        <div class="product-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="card-name-row">
+            <span class="card-name">Predara</span>
+            <span class="card-tag">AI · Markets</span>
+          </div>
+          <p class="card-desc">An AI-driven analyzer that decodes contract rules from Polymarket, Kalshi, Gemini, and Coinbase — turning complex rules into clarity.</p>
+          <a class="card-link" href="https://www.predara.org/" target="_blank" rel="noopener noreferrer">
+            predara.org
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- F1SimHub -->
+        <div class="product-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="card-name-row">
+            <span class="card-name">F1SimHub</span>
+            <span class="card-tag">Racing · Sim</span>
+          </div>
+          <p class="card-desc">A companion hub for Formula 1 simulation racing — telemetry, setups, and data tools for drivers who take the virtual grid seriously.</p>
+          <a class="card-link" href="https://www.f1simhub.com/" target="_blank" rel="noopener noreferrer">
+            f1simhub.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Tarmac -->
+        <div class="product-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
+            </div>
+            <div class="status-badge">
+              <span class="status-dot"></span>
+              Live
+            </div>
+          </div>
+          <div class="card-name-row">
+            <span class="card-name">Tarmac</span>
+            <span class="card-tag">Motorsport · Live</span>
+          </div>
+          <p class="card-desc">Live motorsport data, timing, and race-day intelligence — built for fans who want more than the broadcast gives them.</p>
+          <a class="card-link" href="https://tarmac.live/" target="_blank" rel="noopener noreferrer">
+            tarmac.live
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div>
+          <div class="about-eyebrow">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Studio Philosophy
+          </div>
+          <h2 class="about-title">How We Operate</h2>
+          <p class="about-quote">One legal entity. Multiple products. Zero custody.</p>
+          <p class="about-text" style="margin-bottom:16px;">Edison Labs is structured for velocity. We build experimental software that pushes boundaries without compromising on structural leanness.</p>
+          <p class="about-text">Our focus is on creating tools that empower users through direct interaction with decentralized systems and AI-driven insights, always prioritizing transparency and self-sovereignty.</p>
+        </div>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h4>Clean Architecture</h4>
+            <p>Systems designed for scale, readability, and immediate utility.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Minimal Intermediaries</h4>
+            <p>Direct peer-to-peer interactions without custodial friction.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+            </div>
+            <h4>Experimental by Design</h4>
+            <p>Building at the edge of what's possible in web3 and AI.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Long-term Flexibility</h4>
+            <p>Agile product evolution decoupled from monolithic structures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-center">
+      <div class="contact-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <h2 class="contact-title">Get in Touch</h2>
+      <p class="contact-sub">Interested in what we're building? Reach out to discuss experimental tech, partnerships, or just to say hello.</p>
+      <a class="email-btn" href="mailto:edisonlabschicago@gmail.com">
+        edisonlabschicago@gmail.com
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-left">
+        <img src="logo.png" alt="Edison Labs" onerror="this.style.display='none'" />
+        <span>© 2025 Edison Labs LLC · Chicago, IL</span>
+      </div>
+      <div class="footer-links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="risk.html">Risk Disclosure</a>
+      </div>
+    </footer>
+
+    <div class="footer-glow"></div>
+  </section>
+
+  <script>
+    // Scroll-aware nav
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+  </script>
+
 </body>
 </html>
