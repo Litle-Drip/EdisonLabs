@@ -398,6 +398,146 @@
     .card-link svg { transition: transform 0.15s; }
     .card-link:hover svg { transform: translate(2px, -2px); }
 
+    /* ── Coming Soon ─────────────────────────────────────── */
+    #coming-soon {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 128px;
+    }
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .teaser-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 183, 77, 0.18);
+      border-radius: 16px;
+      padding: 28px;
+      overflow: hidden;
+      transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .teaser-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 28px rgba(255, 183, 77, 0.1);
+      border-color: rgba(255, 183, 77, 0.35);
+    }
+    .teaser-card-glow {
+      position: absolute;
+      top: 0; right: 0;
+      width: 100px; height: 100px;
+      background: rgba(255, 183, 77, 0.04);
+      border-radius: 0 0 0 100%;
+      filter: blur(20px);
+      transition: background 0.4s;
+    }
+    .teaser-card:hover .teaser-card-glow {
+      background: rgba(255, 183, 77, 0.09);
+    }
+    .dev-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(255, 183, 77, 0.08);
+      border: 1px solid rgba(255, 183, 77, 0.3);
+      color: #fbbf24;
+      font-size: 11px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .dev-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #f59e0b;
+      animation: devpulse 3s ease-in-out infinite;
+    }
+    @keyframes devpulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+    .teaser-icon {
+      width: 48px; height: 48px;
+      background: rgba(255, 183, 77, 0.07);
+      border: 1px solid rgba(255, 183, 77, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fbbf24;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+    }
+    .teaser-icon svg {
+      filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.5));
+    }
+    .teaser-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      position: relative; z-index: 1;
+    }
+    .teaser-name-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .teaser-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      filter: blur(6px);
+      user-select: none;
+    }
+    .teaser-tag {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 183, 77, 0.08);
+      color: #fbbf24;
+      border: 1px solid rgba(255, 183, 77, 0.2);
+    }
+    .teaser-desc {
+      color: var(--text-muted);
+      font-size: 13px;
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 24px;
+      position: relative; z-index: 1;
+    }
+    .teaser-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #fbbf24;
+      font-size: 13px;
+      font-weight: 500;
+      position: relative; z-index: 1;
+      opacity: 0.8;
+      transition: opacity 0.15s;
+    }
+    .teaser-card:hover .teaser-cta { opacity: 1; }
+    .teaser-cta svg { transition: transform 0.15s; }
+    .teaser-card:hover .teaser-cta svg { transform: translateX(3px); }
+    @media (max-width: 900px) {
+      .coming-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .coming-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── About ───────────────────────────────────────────── */
     #about {
       position: relative;
@@ -762,6 +902,7 @@
       </a>
       <div class="nav-links">
         <a href="#products">Products</a>
+        <a href="#coming-soon">Coming Soon</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -903,6 +1044,89 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Coming Soon -->
+  <section id="coming-soon">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>What's Coming</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="coming-grid">
+
+        <!-- Teaser 1 -->
+        <a class="teaser-card" href="https://discord.com/invite/ny5xs2Vxvu" target="_blank" rel="noopener noreferrer">
+          <div class="teaser-card-glow"></div>
+          <div class="teaser-top">
+            <div class="teaser-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            </div>
+            <div class="dev-badge">
+              <span class="dev-dot"></span>
+              In Development
+            </div>
+          </div>
+          <div class="teaser-name-row">
+            <span class="teaser-name">Project Alpha</span>
+            <span class="teaser-tag">AI · Automation</span>
+          </div>
+          <p class="teaser-desc">A new tool in the intelligence stack — designed to surface signal from noise across real-time data streams. Details dropping to the community first.</p>
+          <span class="teaser-cta">
+            Get early access on Discord
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <!-- Teaser 2 -->
+        <a class="teaser-card" href="https://discord.com/invite/ny5xs2Vxvu" target="_blank" rel="noopener noreferrer">
+          <div class="teaser-card-glow"></div>
+          <div class="teaser-top">
+            <div class="teaser-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div class="dev-badge">
+              <span class="dev-dot"></span>
+              In Development
+            </div>
+          </div>
+          <div class="teaser-name-row">
+            <span class="teaser-name">Project Beta</span>
+            <span class="teaser-tag">Web3 · Analytics</span>
+          </div>
+          <p class="teaser-desc">On-chain analytics reimagined — giving traders and builders a cleaner lens on protocol activity without the custodial overhead. Coming soon.</p>
+          <span class="teaser-cta">
+            Get early access on Discord
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
+
+        <!-- Teaser 3 -->
+        <a class="teaser-card" href="https://discord.com/invite/ny5xs2Vxvu" target="_blank" rel="noopener noreferrer">
+          <div class="teaser-card-glow"></div>
+          <div class="teaser-top">
+            <div class="teaser-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <div class="dev-badge">
+              <span class="dev-dot"></span>
+              In Development
+            </div>
+          </div>
+          <div class="teaser-name-row">
+            <span class="teaser-name">Project Gamma</span>
+            <span class="teaser-tag">Data · Visualization</span>
+          </div>
+          <p class="teaser-desc">A dashboard layer for power users who want their data surfaced, not buried. Built for speed, designed for clarity. More details on the way.</p>
+          <span class="teaser-cta">
+            Get early access on Discord
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </a>
 
       </div>
     </div>
