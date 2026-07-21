@@ -4,162 +4,446 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Terms of Use – Edison Labs</title>
+  <title>Privacy Policy – Edison Labs</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <style>
     :root {
       --bg: #000000;
-      --card-bg: #101010;
-      --card-border: rgba(255, 255, 255, 0.05);
-      --accent: #4cc3ff;      /* Juice neon blue */
+      --card-bg: #0b0b10;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #4cc3ff;
+      --accent-soft: rgba(76, 195, 255, 0.16);
       --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
     }
 
-    /* Page background + centering */
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      padding: 32px 12px;
+      padding: 0;
+      min-height: 100vh;
       background:
-        radial-gradient(circle at top, rgba(76, 195, 255, 0.10), transparent 55%),
-        var(--bg);
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        radial-gradient(circle at top, rgba(76, 195, 255, 0.16), transparent 55%),
+        radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #000000);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
       color: var(--text-main);
+    }
+
+    /* ── Site nav ─────────────────────────────────────────── */
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      background: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .site-nav a.nav-logo img {
+      height: 30px;
+      width: auto;
+      filter: drop-shadow(0 0 8px rgba(76, 195, 255, 0.35));
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      border-color: rgba(76, 195, 255, 0.25);
+    }
+
+    .nav-links a.active {
+      color: var(--accent);
+      border-color: rgba(76, 195, 255, 0.3);
+      background: rgba(76, 195, 255, 0.07);
+    }
+
+    /* ── Page wrapper ─────────────────────────────────────── */
+    .page-wrapper {
       display: flex;
       justify-content: center;
-      box-sizing: border-box;
+      padding: 32px 12px 48px;
     }
 
-    /* Outer wrapper so card shrinks on mobile */
     .doc-container {
       width: 100%;
-      max-width: 900px;
+      max-width: 920px;
     }
 
-    /* The actual card */
+    /* ── Card ─────────────────────────────────────────────── */
     .doc-card {
       background-color: var(--card-bg);
-      border-radius: 16px;
-      padding: 32px 24px;
+      border-radius: 20px;
+      padding: 28px 24px 32px;
       border: 1px solid var(--card-border);
-      box-shadow: 0 0 40px rgba(76, 195, 255, 0.18); /* blue glow */
-      box-sizing: border-box;
+      box-shadow:
+        0 0 26px rgba(15, 23, 42, 0.9),
+        0 0 40px rgba(76, 195, 255, 0.14);
       overflow-wrap: break-word;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    /* Headings */
-    h1, h2, h3 {
-      color: var(--accent);
-      margin-top: 0;
-      margin-bottom: 12px;
+    .doc-glow-ring {
+      position: absolute;
+      inset: -1px;
+      border-radius: 20px;
+      pointer-events: none;
+      border: 1px solid transparent;
+      background:
+        linear-gradient(145deg, rgba(76, 195, 255, 0.55), transparent 45%, rgba(76, 195, 255, 0.22)) border-box;
+      opacity: 0.18;
+      z-index: -1;
     }
 
-    /* Make preformatted legal text wrap inside the card */
-    pre {
+    /* ── Card header ──────────────────────────────────────── */
+    .doc-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 16px;
+      width: 100%;
+      max-width: 700px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .doc-pill {
+      padding: 3px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(76, 195, 255, 0.25);
+      background: rgba(15, 23, 42, 0.65);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .doc-logo {
+      height: 38px;
+      width: auto;
+      filter: drop-shadow(0 0 10px rgba(76, 195, 255, 0.35));
+    }
+
+    h1 {
       margin: 0;
-      white-space: pre-wrap;   /* KEY: wrap long lines */
-      word-wrap: break-word;   /* break long words if needed */
-      font-family: inherit;
+      font-size: 24px;
+      letter-spacing: 0.04em;
+    }
+
+    .doc-subtitle {
+      margin-top: 2px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--text-muted);
+      opacity: 0.85;
+      flex-wrap: wrap;
+    }
+
+    .meta-pill {
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    /* ── Divider ──────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      width: 100%;
+      margin: 14px 0 18px;
+      background: linear-gradient(
+        90deg,
+        rgba(148, 163, 184, 0.08),
+        rgba(76, 195, 255, 0.35),
+        rgba(148, 163, 184, 0.06)
+      );
+    }
+
+    /* ── Content ──────────────────────────────────────────── */
+    .doc-inner {
+      width: 100%;
+      max-width: 700px;
+    }
+
+    h2 {
+      margin: 22px 0 8px;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin: 14px 0 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.04em;
+    }
+
+    p {
+      margin: 6px 0 10px;
       font-size: 14px;
       line-height: 1.7;
       color: var(--text-main);
     }
 
+    ul {
+      margin: 6px 0 14px 18px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    li { margin-bottom: 4px; }
+
+    .muted { color: var(--text-muted); }
+
+    /* ── Related docs box ─────────────────────────────────── */
+    .related-docs {
+      margin-top: 22px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 13px;
+    }
+
+    .related-docs a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .related-docs a:hover { text-decoration: underline; }
+
+    /* ── Footer ───────────────────────────────────────────── */
+    footer.doc-footer {
+      margin-top: 26px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(148, 163, 184, 0.26);
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.7;
+      width: 100%;
+    }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .doc-inner { max-width: 100%; }
+    }
+
     @media (max-width: 600px) {
-      body {
-        padding: 24px 8px;
-      }
-      .doc-card {
-        padding: 24px 16px;
-      }
-      pre {
-        font-size: 13px;
-      }
+      .page-wrapper { padding: 20px 10px 40px; }
+      .doc-card { padding: 22px 16px 26px; }
+      h1 { font-size: 20px; }
+      p, li { font-size: 13px; }
+      .doc-logo { height: 32px; }
+      .site-nav { padding: 12px 16px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="doc-container">
-    <div class="doc-card">
-<pre>
-Last updated: 12/4/2025
 
-This Privacy Policy explains how Edison Labs LLC (“Edison Labs”, “we”, “us”) collects, uses, and protects information in connection with thejuiceapp.io and related services (the “Service”).
+  <!-- Site navigation -->
+  <nav class="site-nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Edison Labs" />
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html" class="active">Privacy</a>
+      <a href="risk.html">Risk</a>
+    </div>
+  </nav>
 
-1. Information We Collect
+  <div class="page-wrapper">
+    <div class="doc-container">
+      <div class="doc-card">
+        <div class="doc-glow-ring"></div>
 
-We aim to collect as little personal information as reasonably possible.
+        <header class="doc-header">
+          <div class="doc-pill">Edison Labs LLC – Legal Documentation</div>
 
-a) Information you provide directly  
-- Contact information if you email us or fill out a form (e.g., name, email, message content).
+          <div class="title-row">
+            <img src="logo.png" alt="Edison Labs Logo" class="doc-logo" />
+            <h1>Privacy Policy</h1>
+          </div>
 
-b) Information collected automatically  
-- Standard web logs (IP address, browser type, pages viewed, timestamps).
-- Device and usage information (e.g., referring URLs, approximate location based on IP).
-- If enabled, aggregated analytics data from third-party tools (e.g., page views, session duration).
+          <p class="doc-subtitle">
+            How Edison Labs collects, uses, and protects information in connection with its services.
+          </p>
 
-c) Blockchain and wallet data  
-When you connect a wallet or interact with smart contracts:
-- We may see your public wallet address and transaction details on-chain.
-- We do not control or store your private keys.
+          <div class="meta-row">
+            <div class="meta-pill">Last Updated: December 4, 2025</div>
+          </div>
+        </header>
 
-2. How We Use Information
+        <div class="divider"></div>
 
-We use collected information to:
-- operate, maintain, and improve the Service,
-- understand usage patterns and performance,
-- communicate with you if you contact us,
-- detect, prevent, or investigate potential abuse or security issues,
-- comply with legal obligations when required.
+        <div class="doc-inner">
+          <main>
+            <p>
+              This Privacy Policy explains how Edison Labs LLC ("Edison Labs", "we", "us") collects, uses, and protects
+              information in connection with thejuiceapp.io and related services (the "Service").
+            </p>
 
-We do not sell your personal data.
+            <h2>1. Information We Collect</h2>
+            <p>We aim to collect as little personal information as reasonably possible.</p>
 
-3. Cookies and Similar Technologies
+            <h3>a) Information you provide directly</h3>
+            <ul>
+              <li>Contact information if you email us or fill out a form (e.g., name, email, message content).</li>
+            </ul>
 
-We may use cookies or similar technologies to:
-- remember basic preferences,
-- perform analytics, or
-- improve the user experience.
+            <h3>b) Information collected automatically</h3>
+            <ul>
+              <li>Standard web logs (IP address, browser type, pages viewed, timestamps).</li>
+              <li>Device and usage information (e.g., referring URLs, approximate location based on IP).</li>
+              <li>If enabled, aggregated analytics data from third-party tools (e.g., page views, session duration).</li>
+            </ul>
 
-You can usually control cookies through your browser settings.
+            <h3>c) Blockchain and wallet data</h3>
+            <p>When you connect a wallet or interact with smart contracts:</p>
+            <ul>
+              <li>We may see your public wallet address and transaction details on-chain.</li>
+              <li>We do not control or store your private keys.</li>
+            </ul>
 
-4. Third-Party Services
+            <h2>2. How We Use Information</h2>
+            <p>We use collected information to:</p>
+            <ul>
+              <li>operate, maintain, and improve the Service,</li>
+              <li>understand usage patterns and performance,</li>
+              <li>communicate with you if you contact us,</li>
+              <li>detect, prevent, or investigate potential abuse or security issues,</li>
+              <li>comply with legal obligations when required.</li>
+            </ul>
+            <p>We do not sell your personal data.</p>
 
-We may use third-party providers for:
-- analytics,
-- error tracking,
-- infrastructure (e.g., hosting, RPC providers).
+            <h2>3. Cookies and Similar Technologies</h2>
+            <p>We may use cookies or similar technologies to:</p>
+            <ul>
+              <li>remember basic preferences,</li>
+              <li>perform analytics, or</li>
+              <li>improve the user experience.</li>
+            </ul>
+            <p>You can usually control cookies through your browser settings.</p>
 
-These providers may collect information in accordance with their own privacy policies. We encourage you to review those policies.
+            <h2>4. Third-Party Services</h2>
+            <p>We may use third-party providers for:</p>
+            <ul>
+              <li>analytics,</li>
+              <li>error tracking,</li>
+              <li>infrastructure (e.g., hosting, RPC providers).</li>
+            </ul>
+            <p>
+              These providers may collect information in accordance with their own privacy policies.
+              We encourage you to review those policies.
+            </p>
 
-5. Data Security
+            <h2>5. Data Security</h2>
+            <p>We take reasonable measures to protect information we control. However:</p>
+            <ul>
+              <li>no system is perfectly secure,</li>
+              <li>blockchain transactions are public and irrevocable,</li>
+              <li>transmission of data over the internet carries inherent risks.</li>
+            </ul>
 
-We take reasonable measures to protect information we control. However:
-- no system is perfectly secure,
-- blockchain transactions are public and irrevocable,
-- transmission of data over the internet carries inherent risks.
+            <h2>6. Your Choices</h2>
+            <p>You may:</p>
+            <ul>
+              <li>choose not to provide certain information (though this may limit some features),</li>
+              <li>configure cookie or tracking preferences in your browser,</li>
+              <li>disconnect your wallet at any time.</li>
+            </ul>
 
-6. Your Choices
+            <h2>7. Children's Privacy</h2>
+            <p>
+              The Service is not directed to individuals under 18. We do not knowingly collect personal data from children.
+              If you believe a child has provided us information, contact us and we will take appropriate steps.
+            </p>
 
-You may:
-- choose not to provide certain information (though this may limit some features),
-- configure cookie or tracking preferences in your browser,
-- disconnect your wallet at any time.
+            <h2>8. Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time. If we make material changes, we will update the
+              "Last updated" date and may provide additional notice. Your continued use of the Service means you accept
+              the updated Policy.
+            </p>
 
-7. Children’s Privacy
+            <h2>9. Contact</h2>
+            <p>
+              For privacy-related questions, you can reach us at:<br />
+              <a href="mailto:arrakeensubstack@gmail.com" style="color: var(--accent); text-decoration: none;">arrakeensubstack@gmail.com</a>
+            </p>
 
-The Service is not directed to individuals under 18. We do not knowingly collect personal data from children. If you believe a child has provided us information, contact us and we will take appropriate steps.
+            <div class="related-docs">
+              <p class="muted">Related legal documents:</p>
+              <ul>
+                <li><a href="terms.html">Terms of Use</a></li>
+                <li><a href="risk.html">Risk Disclosure</a></li>
+                <li><a href="index.html">Company &amp; Product Structure</a></li>
+              </ul>
+            </div>
 
-8. Changes to This Policy
-
-We may update this Privacy Policy from time to time. If we make material changes, we will update the “Last updated” date and may provide additional notice. Your continued use of the Service means you accept the updated Policy.
-
-9. Contact
-
-For privacy-related questions, you can reach us at:
-arrakeensubstack@gmail.com
-</pre>
-<    </div>
+            <footer class="doc-footer">
+              Edison Labs LLC is a Chicago-based software development studio focused on experimental, non-custodial tools.<br />
+              All products are provided "as is" without warranties of any kind, express or implied.<br />
+              © 2025 Edison Labs LLC. All rights reserved.
+            </footer>
+          </main>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
 </html>
