@@ -5,6 +5,7 @@ import { SITE } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Terms of Use',
   description: 'Your access to and use of Edison Labs websites, applications, and smart contracts is governed by these terms.',
+  alternates: { canonical: `${SITE.url}/terms` },
   openGraph: {
     title: 'Terms of Use | Edison Labs',
     url: `${SITE.url}/terms`,

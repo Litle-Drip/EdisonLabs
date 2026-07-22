@@ -4,6 +4,7 @@ import { SectionHeader } from '@/components/ui/section-header'
 import { ProductCard } from '@/components/ui/product-card'
 import { FadeIn } from '@/components/ui/fade-in'
 import { Button } from '@/components/ui/button'
+import { JsonLd } from '@/components/ui/json-ld'
 import {
   ArrowRightIcon,
   TeaserIcon,
@@ -25,11 +26,36 @@ import { SITE, SOCIAL } from '@/lib/constants'
 export const metadata: Metadata = {
   title: SITE.tagline,
   description: SITE.description,
+  alternates: { canonical: SITE.url },
+}
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Edison Labs',
+  legalName: 'Edison Labs LLC',
+  url: SITE.url,
+  logo: `${SITE.url}/logo.png`,
+  description: SITE.description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Chicago',
+    addressRegion: 'IL',
+    addressCountry: 'US',
+  },
+  sameAs: [SOCIAL.twitter, SOCIAL.discord, SOCIAL.substack],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: SITE.email,
+    contactType: 'customer support',
+  },
 }
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={organizationSchema} />
+
       {/* ── Hero ─────────────────────────────────────────── */}
       <section
         id="hero"

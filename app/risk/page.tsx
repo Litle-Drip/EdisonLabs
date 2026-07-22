@@ -5,6 +5,7 @@ import { SITE } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Risk Disclosure',
   description: 'Significant risks you should understand before using The Juice or any Edison Labs tool.',
+  alternates: { canonical: `${SITE.url}/risk` },
   openGraph: {
     title: 'Risk Disclosure | Edison Labs',
     url: `${SITE.url}/risk`,

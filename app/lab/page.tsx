@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'The Lab',
   description:
     'Where Edison Labs experiments live before they become products. Five active areas of exploration: AI systems, prediction markets, simulation analytics, developer tools, and productivity software.',
+  alternates: { canonical: `${SITE.url}/lab` },
   openGraph: {
     title: 'The Lab | Edison Labs',
     description: 'Where experiments live before they become products.',

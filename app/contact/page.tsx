@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Contact',
   description:
     'Get in touch with Edison Labs. Reach us at edisonlabschicago@gmail.com or connect on X, Discord, or Substack.',
+  alternates: { canonical: `${SITE.url}/contact` },
   openGraph: {
     title: 'Contact | Edison Labs',
     description: 'Get in touch with Edison Labs.',

@@ -8,6 +8,7 @@ import { SITE } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Products',
   description: `All five Edison Labs products — ${products.map((p) => p.name).join(', ')}. Independent software built around blockchain, AI, simulation, and emerging tech.`,
+  alternates: { canonical: `${SITE.url}/products` },
   openGraph: {
     title: `Products | Edison Labs`,
     description: `The full Edison Labs product portfolio.`,

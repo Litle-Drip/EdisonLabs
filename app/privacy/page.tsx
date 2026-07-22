@@ -5,6 +5,7 @@ import { SITE } from '@/lib/constants'
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description: 'How Edison Labs collects, uses, and protects information in connection with its services.',
+  alternates: { canonical: `${SITE.url}/privacy` },
   openGraph: {
     title: 'Privacy Policy | Edison Labs',
     url: `${SITE.url}/privacy`,

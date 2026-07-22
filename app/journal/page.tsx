@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Journal',
   description:
     'Studio updates from Edison Labs — product launches, experiments, and thoughts on building software for emerging technology.',
+  alternates: { canonical: `${SITE.url}/journal` },
   openGraph: {
     title: 'Journal | Edison Labs',
     description: 'Studio updates from Edison Labs.',

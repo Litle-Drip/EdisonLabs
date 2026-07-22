@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'Edison Labs is an independent software studio in Chicago building practical digital products around blockchain, AI, simulation, and emerging technology.',
+  alternates: { canonical: `${SITE.url}/about` },
   openGraph: {
     title: 'About | Edison Labs',
     description: 'An independent software studio in Chicago.',
