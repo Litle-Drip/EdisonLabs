@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0B0D10;
+  --surface: #111418;
+  --card-bg: #111418;
+  --border: #222831;
+  --accent: #4DA3FF;
+  --accent-hover: #6BB6FF;
+  --accent-soft: rgba(77, 163, 255, 0.10);
+  --accent-border: rgba(77, 163, 255, 0.2);
+  --accent-border-hover: rgba(77, 163, 255, 0.4);
+  --warning-border: rgba(255, 183, 77, 0.18);
+  --warning-border-hover: rgba(255, 183, 77, 0.38);
+  --text-main: #FFFFFF;
+  --text-muted: #B3BAC5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-main);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Card hover effects ────────────────────────────── */
+.product-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent-border-hover);
+}
+
+.product-card-hover:hover .card-glow-el {
+  background: rgba(77, 163, 255, 0.10);
+}
+
+.teaser-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: var(--warning-border-hover);
+}
+
+.teaser-card-hover:hover .teaser-glow-el {
+  background: rgba(255, 183, 77, 0.09);
+}
+
+.lab-tile-hover:hover {
+  border-color: var(--accent-border-hover);
+  background: rgba(77, 163, 255, 0.06);
+}
+
+/* ── Gradient text ─────────────────────────────────── */
+.grad-text {
+  background: linear-gradient(to right, #fff, #B3BAC5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Section decorative line ───────────────────────── */
+.section-line {
+  height: 1px;
+  flex: 1;
+  margin-left: 16px;
+  background: linear-gradient(to right, rgba(77, 163, 255, 0.3), transparent);
+}
+
+/* ── Hero decorative orbits ────────────────────────── */
+.orbit {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  border: 1px solid rgba(77, 163, 255, 0.1);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* ── Focus styles ──────────────────────────────────── */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.focus-ring-offset:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Mobile nav ────────────────────────────────────── */
+.mobile-nav-open {
+  overflow: hidden;
+}
+
+/* ── Hero text glow ────────────────────────────────── */
+.accent-glow {
+  color: var(--accent);
+  text-shadow: 0 0 20px rgba(77, 163, 255, 0.5);
+}
+
+/* ── Community card glow ───────────────────────────── */
+.community-glow {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  height: 240px;
+  background: rgba(77, 163, 255, 0.08);
+  filter: blur(60px);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── Footer glow ───────────────────────────────────── */
+.footer-glow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 720px;
+  height: 256px;
+  background: rgba(77, 163, 255, 0.10);
+  filter: blur(100px);
+  border-radius: 50% 50% 0 0;
+  pointer-events: none;
+  z-index: 0;
+}
