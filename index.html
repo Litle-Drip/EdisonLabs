@@ -29,13 +29,20 @@
 
   <style>
     :root {
-      --bg: #000000;
-      --card-bg: #0b0b10;
-      --card-border: rgba(76, 195, 255, 0.2);
-      --accent: #4cc3ff;
-      --accent-soft: rgba(76, 195, 255, 0.10);
-      --text-main: #e2e8f0;
-      --text-muted: #94a3b8;
+      --bg: #0B0D10;
+      --surface: #111418;
+      --card-bg: #111418;
+      --border: #222831;
+      --card-border: #222831;
+      --accent: #4DA3FF;
+      --accent-hover: #6BB6FF;
+      --accent-soft: rgba(77, 163, 255, 0.10);
+      --accent-border: rgba(77, 163, 255, 0.2);
+      --accent-border-hover: rgba(77, 163, 255, 0.4);
+      --warning-border: rgba(255, 183, 77, 0.18);
+      --warning-border-hover: rgba(255, 183, 77, 0.38);
+      --text-main: #FFFFFF;
+      --text-muted: #B3BAC5;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,7 +62,7 @@
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 800px;
-      background: radial-gradient(circle at 50% 0%, rgba(76, 195, 255, 0.13), transparent 60%);
+      background: radial-gradient(circle at 50% 0%, rgba(77, 163, 255, 0.12), transparent 60%);
       pointer-events: none;
       z-index: 0;
     }
@@ -78,13 +85,13 @@
       transition: background 0.3s, border-color 0.3s, padding 0.3s;
     }
     .site-nav.scrolled {
-      background: rgba(0,0,0,0.80);
+      background: rgba(11, 13, 16, 0.88);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(76, 195, 255, 0.2);
+      border-bottom: 1px solid var(--border);
       padding: 16px 0;
     }
     .nav-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 48px;
       display: flex;
@@ -135,7 +142,7 @@
       z-index: 1;
     }
     .hero-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 48px;
       width: 100%;
@@ -148,8 +155,8 @@
       gap: 8px;
       padding: 8px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(76, 195, 255, 0.3);
-      background: rgba(76, 195, 255, 0.10);
+      border: 1px solid var(--accent-border-hover);
+      background: var(--accent-soft);
       color: var(--accent);
       font-size: 13px;
       font-weight: 500;
@@ -201,20 +208,21 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 16px 32px;
+      padding: 14px 32px;
+      min-height: 48px;
       background: var(--accent);
       color: #000;
       font-weight: 700;
       font-size: 15px;
-      border-radius: 8px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
-      transition: background 0.2s, box-shadow 0.3s;
+      transition: background 0.2s, box-shadow 0.2s;
       text-decoration: none;
     }
     .btn-primary:hover {
-      background: #3bb1f0;
-      box-shadow: 0 0 30px rgba(76, 195, 255, 0.4);
+      background: var(--accent-hover);
+      box-shadow: 0 0 28px rgba(77, 163, 255, 0.35);
     }
     .btn-primary svg { transition: transform 0.2s; }
     .btn-primary:hover svg { transform: translateX(3px); }
@@ -222,21 +230,23 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 16px 32px;
+      padding: 14px 32px;
+      min-height: 48px;
       background: transparent;
       color: #fff;
       font-weight: 700;
       font-size: 15px;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 12px;
+      border: 1px solid var(--border);
       cursor: pointer;
-      transition: border-color 0.2s, color 0.2s;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
       text-decoration: none;
       backdrop-filter: blur(6px);
     }
     .btn-secondary:hover {
       border-color: var(--accent);
       color: var(--accent);
+      background: rgba(77, 163, 255, 0.05);
     }
     /* Decorative orbits */
     .orbit {
@@ -256,10 +266,10 @@
     #products {
       position: relative;
       z-index: 1;
-      padding: 128px 0;
+      padding: 96px 0;
     }
     .section-inner {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 48px;
     }
@@ -293,14 +303,15 @@
       flex-direction: column;
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: 24px;
       padding: 32px;
       overflow: hidden;
-      transition: transform 0.4s, box-shadow 0.4s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     }
     .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 30px rgba(76, 195, 255, 0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border-color: var(--accent-border-hover);
     }
     .card-glow {
       position: absolute;
@@ -324,7 +335,7 @@
     .card-icon {
       width: 56px; height: 56px;
       background: rgba(76, 195, 255, 0.10);
-      border: 1px solid rgba(76, 195, 255, 0.3);
+      border: 1px solid var(--accent-border-hover);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -340,7 +351,7 @@
       gap: 6px;
       padding: 4px 12px;
       border-radius: 999px;
-      background: #000;
+      background: var(--surface);
       border: 1px solid rgba(34, 197, 94, 0.3);
       color: #4ade80;
       font-size: 11px;
@@ -379,9 +390,9 @@
       letter-spacing: 0.1em;
       padding: 3px 8px;
       border-radius: 4px;
-      background: rgba(76, 195, 255, 0.1);
+      background: var(--accent-soft);
       color: var(--accent);
-      border: 1px solid rgba(76, 195, 255, 0.2);
+      border: 1px solid var(--accent-border);
     }
     .card-desc {
       color: var(--text-muted);
@@ -410,7 +421,7 @@
     #coming-soon {
       position: relative;
       z-index: 1;
-      padding: 0 0 128px;
+      padding: 0 0 96px;
     }
     .coming-grid {
       display: grid;
@@ -422,18 +433,18 @@
       display: flex;
       flex-direction: column;
       background: var(--card-bg);
-      border: 1px solid rgba(255, 183, 77, 0.18);
-      border-radius: 16px;
+      border: 1px solid var(--warning-border);
+      border-radius: 24px;
       padding: 28px;
       overflow: hidden;
-      transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
       text-decoration: none;
       cursor: pointer;
     }
     .teaser-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 0 28px rgba(255, 183, 77, 0.1);
-      border-color: rgba(255, 183, 77, 0.35);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      border-color: var(--warning-border-hover);
     }
     .teaser-card-glow {
       position: absolute;
@@ -454,7 +465,7 @@
       padding: 4px 12px;
       border-radius: 999px;
       background: rgba(255, 183, 77, 0.08);
-      border: 1px solid rgba(255, 183, 77, 0.3);
+      border: 1px solid var(--warning-border-hover);
       color: #fbbf24;
       font-size: 11px;
       font-weight: 500;
@@ -473,7 +484,7 @@
     .teaser-icon {
       width: 48px; height: 48px;
       background: rgba(255, 183, 77, 0.07);
-      border: 1px solid rgba(255, 183, 77, 0.2);
+      border: 1px solid var(--warning-border);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -515,7 +526,7 @@
       border-radius: 4px;
       background: rgba(255, 183, 77, 0.08);
       color: #fbbf24;
-      border: 1px solid rgba(255, 183, 77, 0.2);
+      border: 1px solid var(--warning-border);
     }
     .teaser-desc {
       color: var(--text-muted);
@@ -550,7 +561,7 @@
     #lab {
       position: relative;
       z-index: 1;
-      padding: 0 0 128px;
+      padding: 0 0 96px;
     }
     .lab-intro {
       max-width: 560px;
@@ -589,22 +600,22 @@
       align-items: flex-start;
       gap: 14px;
       padding: 18px 22px;
-      border: 1px solid rgba(76, 195, 255, 0.12);
+      border: 1px solid var(--accent-border);
       border-radius: 12px;
-      background: rgba(76, 195, 255, 0.03);
+      background: var(--accent-soft);
       transition: border-color 0.2s, background 0.2s;
       flex: 1 1 calc(33% - 16px);
       min-width: 220px;
     }
     .lab-tile:hover {
-      border-color: rgba(76, 195, 255, 0.28);
-      background: rgba(76, 195, 255, 0.06);
+      border-color: var(--accent-border-hover);
+      background: rgba(77, 163, 255, 0.06);
     }
     .lab-tile-icon {
       width: 36px; height: 36px;
       border-radius: 8px;
       background: rgba(76, 195, 255, 0.08);
-      border: 1px solid rgba(76, 195, 255, 0.15);
+      border: 1px solid var(--accent-border);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -634,10 +645,10 @@
     #about {
       position: relative;
       z-index: 1;
-      padding: 128px 0;
-      background: rgba(11, 11, 16, 0.5);
-      border-top: 1px solid rgba(76, 195, 255, 0.1);
-      border-bottom: 1px solid rgba(76, 195, 255, 0.1);
+      padding: 96px 0;
+      background: rgba(17, 20, 24, 0.6);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
     .about-grid {
       display: grid;
@@ -679,13 +690,13 @@
       gap: 16px;
     }
     .pillar {
-      background: #000;
-      border: 1px solid rgba(76, 195, 255, 0.2);
+      background: var(--bg);
+      border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
       transition: border-color 0.2s;
     }
-    .pillar:hover { border-color: rgba(76, 195, 255, 0.5); }
+    .pillar:hover { border-color: rgba(77, 163, 255, 0.4); }
     .pillar-icon {
       color: var(--accent);
       opacity: 0.7;
@@ -700,7 +711,7 @@
     #community {
       position: relative;
       z-index: 1;
-      padding: 128px 0;
+      padding: 96px 0;
     }
     .community-inner {
       max-width: 860px;
@@ -766,14 +777,15 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 28px;
+      padding: 14px 28px;
+      min-height: 48px;
       background: #5865F2;
       color: #fff;
       font-weight: 700;
       font-size: 15px;
-      border-radius: 8px;
+      border-radius: 12px;
       text-decoration: none;
-      transition: background 0.2s, box-shadow 0.3s;
+      transition: background 0.2s, box-shadow 0.2s;
     }
     .btn-discord:hover {
       background: #4752c4;
@@ -783,13 +795,14 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 28px;
+      padding: 14px 28px;
+      min-height: 48px;
       background: transparent;
       color: #fff;
       font-weight: 700;
       font-size: 15px;
-      border-radius: 8px;
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 12px;
+      border: 1px solid var(--border);
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s, background 0.2s;
       backdrop-filter: blur(6px);
@@ -810,26 +823,26 @@
     #contact {
       position: relative;
       z-index: 1;
-      padding: 128px 0 48px;
+      padding: 96px 0 48px;
     }
     .contact-center {
       max-width: 720px;
       margin: 0 auto;
       padding: 0 24px;
       text-align: center;
-      margin-bottom: 128px;
+      margin-bottom: 96px;
       position: relative; z-index: 1;
     }
     .contact-icon {
       width: 80px; height: 80px;
       margin: 0 auto 32px;
       background: rgba(76, 195, 255, 0.10);
-      border: 1px solid rgba(76, 195, 255, 0.3);
+      border: 1px solid var(--accent-border-hover);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 30px rgba(76, 195, 255, 0.2);
+      box-shadow: 0 0 28px rgba(77, 163, 255, 0.18);
     }
     .contact-icon svg { color: var(--accent); }
     .contact-title {
@@ -850,19 +863,20 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      padding: 16px 32px;
+      padding: 14px 32px;
+      min-height: 48px;
       background: var(--card-bg);
-      border: 1px solid rgba(76, 195, 255, 0.5);
-      border-radius: 8px;
+      border: 1px solid var(--accent-border-hover);
+      border-radius: 12px;
       color: #fff;
       font-size: 15px;
       font-weight: 600;
       text-decoration: none;
-      transition: border-color 0.2s, box-shadow 0.3s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
     .email-btn:hover {
       border-color: var(--accent);
-      box-shadow: 0 0 20px rgba(76, 195, 255, 0.3);
+      box-shadow: 0 0 20px rgba(77, 163, 255, 0.22);
     }
     .email-btn svg { color: var(--accent); }
     .social-links {
@@ -879,8 +893,8 @@
       gap: 8px;
       padding: 10px 18px;
       background: transparent;
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 8px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
       color: var(--text-muted);
       font-size: 13px;
       font-weight: 500;
@@ -891,7 +905,7 @@
     .social-btn:hover {
       border-color: var(--accent);
       color: var(--accent);
-      background: rgba(76, 195, 255, 0.06);
+      background: var(--accent-soft);
     }
     .social-btn svg { flex-shrink: 0; }
     .footer-social {
@@ -904,8 +918,8 @@
       align-items: center;
       justify-content: center;
       width: 32px; height: 32px;
-      border-radius: 6px;
-      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 8px;
+      border: 1px solid var(--border);
       color: var(--text-muted);
       text-decoration: none;
       transition: border-color 0.2s, color 0.2s;
@@ -913,7 +927,7 @@
     .footer-social-icon:hover { border-color: var(--accent); color: var(--accent); }
     /* Footer */
     .site-footer {
-      max-width: 1280px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 32px 48px;
       border-top: 1px solid rgba(255,255,255,0.05);
