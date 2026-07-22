@@ -5,11 +5,22 @@ import { ProductIcon, ExternalLinkIcon } from './icons'
 
 interface ProductCardProps {
   product: Product
+  /** When set, an overlay link covers the card surface linking to this URL */
+  detailHref?: string
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, detailHref }: ProductCardProps) {
   return (
     <div className="relative flex flex-col bg-card-bg border border-border-default rounded-card p-8 overflow-hidden transition-all duration-200 ease-out product-card-hover group">
+      {/* Overlay link — sits at z-0 so all z-10 elements stay interactive */}
+      {detailHref && (
+        <Link
+          href={detailHref}
+          className="absolute inset-0 z-0 rounded-card focus-ring"
+          aria-label={`View ${product.name} details`}
+          tabIndex={0}
+        />
+      )}
       {/* corner glow */}
       <div className="card-glow-el absolute top-0 right-0 w-32 h-32 rounded-bl-full bg-[rgba(77,163,255,0.05)] blur-3xl transition-colors duration-300 pointer-events-none" />
 
