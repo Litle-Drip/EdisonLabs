@@ -284,7 +284,7 @@
     }
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 32px;
     }
     .product-card {
@@ -345,6 +345,14 @@
       color: #4ade80;
       font-size: 11px;
       font-weight: 500;
+    }
+    .status-badge.coming {
+      border-color: rgba(251, 191, 36, 0.3);
+      color: #fbbf24;
+    }
+    .status-badge.coming .status-dot {
+      background: #f59e0b;
+      animation: devpulse 3s ease-in-out infinite;
     }
     .status-dot {
       width: 7px; height: 7px;
@@ -872,7 +880,7 @@
 
     /* ── Responsive ──────────────────────────────────────── */
     @media (max-width: 900px) {
-      .products-grid { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { grid-template-columns: 1fr; gap: 48px; }
       .pillars-grid { grid-template-columns: 1fr; }
     }
@@ -1041,6 +1049,29 @@
           <p class="card-desc">A crowdsourced TSA wait time app — travelers report live security line times across airports so you can plan smarter before you fly.</p>
           <a class="card-link" href="https://tarmac.live/" target="_blank" rel="noopener noreferrer">
             tarmac.live
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+
+        <!-- Atlas -->
+        <div class="product-card">
+          <div class="card-glow"></div>
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M18 2v4"/><path d="M20 4h-4"/></svg>
+            </div>
+            <div class="status-badge coming">
+              <span class="status-dot"></span>
+              Coming Soon
+            </div>
+          </div>
+          <div class="card-name-row">
+            <span class="card-name">Atlas</span>
+            <span class="card-tag">AI · Productivity</span>
+          </div>
+          <p class="card-desc">Personal AI operating system.</p>
+          <a class="card-link" href="https://discord.com/invite/ny5xs2Vxvu" target="_blank" rel="noopener noreferrer">
+            Join for early access
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           </a>
         </div>
