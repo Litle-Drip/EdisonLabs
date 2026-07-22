@@ -546,6 +546,90 @@
       .coming-grid { grid-template-columns: 1fr; }
     }
 
+    /* ── The Lab ─────────────────────────────────────────── */
+    #lab {
+      position: relative;
+      z-index: 1;
+      padding: 0 0 128px;
+    }
+    .lab-intro {
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+    .lab-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .lab-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .lab-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .lab-tiles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .lab-tile {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 22px;
+      border: 1px solid rgba(76, 195, 255, 0.12);
+      border-radius: 12px;
+      background: rgba(76, 195, 255, 0.03);
+      transition: border-color 0.2s, background 0.2s;
+      flex: 1 1 calc(33% - 16px);
+      min-width: 220px;
+    }
+    .lab-tile:hover {
+      border-color: rgba(76, 195, 255, 0.28);
+      background: rgba(76, 195, 255, 0.06);
+    }
+    .lab-tile-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(76, 195, 255, 0.08);
+      border: 1px solid rgba(76, 195, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .lab-tile:hover .lab-tile-icon { opacity: 1; }
+    .lab-tile-body {}
+    .lab-tile-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+    .lab-tile-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    @media (max-width: 640px) {
+      .lab-tile { flex: 1 1 100%; }
+    }
+
     /* ── About ───────────────────────────────────────────── */
     #about {
       position: relative;
@@ -910,7 +994,7 @@
       </a>
       <div class="nav-links">
         <a href="#products">Products</a>
-        <a href="#coming-soon">Coming Soon</a>
+        <a href="#lab">Lab</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1158,6 +1242,72 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
           </span>
         </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The Lab -->
+  <section id="lab">
+    <div class="section-inner">
+      <div class="section-header">
+        <h2>The Lab</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="lab-intro">
+        <p class="lab-sub">Where experiments live before they become products. These are the areas we're actively exploring — some will ship, some won't, all are worth building.</p>
+      </div>
+      <div class="lab-tiles">
+
+        <div class="lab-tile">
+          <div class="lab-tile-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><path d="M18 2v4"/><path d="M20 4h-4"/></svg>
+          </div>
+          <div class="lab-tile-body">
+            <div class="lab-tile-label">AI Systems</div>
+            <div class="lab-tile-desc">Agents and tools that reason, route, and act on your behalf.</div>
+          </div>
+        </div>
+
+        <div class="lab-tile">
+          <div class="lab-tile-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div class="lab-tile-body">
+            <div class="lab-tile-label">Prediction Markets</div>
+            <div class="lab-tile-desc">New interfaces for understanding and trading on uncertainty.</div>
+          </div>
+        </div>
+
+        <div class="lab-tile">
+          <div class="lab-tile-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <div class="lab-tile-body">
+            <div class="lab-tile-label">Simulation Analytics</div>
+            <div class="lab-tile-desc">Data layers for sim racing and real-time motorsport telemetry.</div>
+          </div>
+        </div>
+
+        <div class="lab-tile">
+          <div class="lab-tile-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="lab-tile-body">
+            <div class="lab-tile-label">Developer Tools</div>
+            <div class="lab-tile-desc">Infrastructure and utilities that make building faster and cleaner.</div>
+          </div>
+        </div>
+
+        <div class="lab-tile">
+          <div class="lab-tile-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="lab-tile-body">
+            <div class="lab-tile-label">Productivity Tools</div>
+            <div class="lab-tile-desc">Personal software for staying organised and thinking clearly.</div>
+          </div>
+        </div>
 
       </div>
     </div>
