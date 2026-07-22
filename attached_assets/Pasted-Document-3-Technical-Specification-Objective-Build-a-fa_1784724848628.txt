@@ -1,0 +1,576 @@
+Document 3 — Technical Specification
+Objective
+
+Build a fast, maintainable, scalable Next.js website for Edison Labs.
+
+Technology Stack
+
+Layer
+
+	
+
+Technology
+
+
+
+
+Framework
+
+	
+
+Next.js 15 (App Router)
+
+
+
+
+Language
+
+	
+
+TypeScript
+
+
+
+
+Styling
+
+	
+
+Tailwind CSS
+
+
+
+
+Components
+
+	
+
+shadcn/ui (optional)
+
+
+
+
+Animations
+
+	
+
+Framer Motion (minimal use)
+
+
+
+
+Deployment
+
+	
+
+Vercel
+
+
+
+
+Analytics
+
+	
+
+Vercel Analytics or Plausible
+
+
+
+
+Forms
+
+	
+
+Simple email form or Formspree
+
+Project Structure
+app/
+├── page.tsx
+├── products/
+│   ├── page.tsx
+│   ├── the-juice/
+│   ├── predara/
+│   ├── fisimhub/
+│   └── atlas/
+├── lab/
+│   └── page.tsx
+├── journal/
+│   └── page.tsx
+├── about/
+│   └── page.tsx
+├── contact/
+│   └── page.tsx
+├── privacy/
+├── terms/
+└── legal/
+
+components/
+├── layout/
+│   ├── header.tsx
+│   └── footer.tsx
+├── ui/
+├── product-card.tsx
+├── section-header.tsx
+└── status-badge.tsx
+
+lib/
+├── products.ts
+└── constants.ts
+
+styles/
+└── globals.css
+Component Requirements
+Reusable components
+
+Header
+
+Footer
+
+ProductCard
+
+StatusBadge
+
+SectionHeader
+
+Button
+
+Container
+
+HeroSection
+
+FeatureGrid
+
+ExperimentCard
+
+JournalCard
+
+Performance Targets
+
+Metric
+
+	
+
+Target
+
+
+
+
+Lighthouse Performance
+
+	
+
+95+
+
+
+
+
+Accessibility
+
+	
+
+95+
+
+
+
+
+Best Practices
+
+	
+
+95+
+
+
+
+
+SEO
+
+	
+
+95+
+
+
+
+
+First Contentful Paint
+
+	
+
+< 1.5s
+
+
+
+
+Largest Contentful Paint
+
+	
+
+< 2.5s
+
+
+
+
+Cumulative Layout Shift
+
+	
+
+< 0.1
+
+SEO Requirements
+
+Unique title for every page
+
+Unique meta description for every page
+
+Open Graph tags
+
+Twitter card tags
+
+Structured data where appropriate
+
+XML sitemap
+
+Robots.txt
+
+Canonical URLs
+
+Semantic heading structure (H1, H2, H3)
+
+Image Requirements
+
+Use next/image for all images
+
+Provide responsive image sizes
+
+Use WebP or AVIF when possible
+
+Lazy load below-the-fold images
+
+Include width and height attributes
+
+Optimize screenshots before upload
+
+Accessibility Requirements
+
+Semantic HTML elements
+
+ARIA labels where needed
+
+Keyboard navigation
+
+Focus management
+
+Screen reader compatibility
+
+Color contrast compliance
+
+Reduced motion support
+
+Analytics
+
+Track:
+
+Page views
+
+Product card clicks
+
+CTA clicks
+
+Contact form submissions
+
+Outbound links
+
+Scroll depth
+
+Content Management
+
+For now, use static content files.
+
+Structure product data in a single file:
+
+export const products = [
+  {
+    name: "The Juice",
+    slug: "the-juice",
+    description: "Peer-to-peer blockchain challenges.",
+    status: "Live",
+    image: "/images/the-juice.png"
+  }
+]
+Code Standards
+
+Use TypeScript for all components
+
+Use functional components
+
+Use server components by default
+
+Use client components only when necessary
+
+Keep components small and reusable
+
+Use descriptive prop names
+
+Avoid inline styles when possible
+
+Use Tailwind utility classes
+
+Follow consistent naming conventions
+
+Deployment Requirements
+
+Deploy to Vercel
+
+Use automatic deployments from GitHub
+
+Preview deployments for every branch
+
+Production domain: edison-labs.com
+
+Enable HTTPS
+
+Enable compression
+
+Enable caching headers
+
+Document 4 — Implementation Roadmap
+Objective
+
+Implement the new Edison Labs website in phases, ensuring each phase is complete and reviewable before moving to the next.
+
+Phase 1 — Foundation
+
+Goal: establish the new structure and homepage.
+
+Tasks
+
+Create Next.js project structure
+
+Implement global layout
+
+Create header and footer
+
+Implement design system tokens
+
+Build homepage hero section
+
+Build featured products section
+
+Build philosophy section
+
+Build recent activity section
+
+Create responsive navigation
+
+Acceptance criteria
+
+Homepage matches new structure
+
+Navigation works on desktop and mobile
+
+Product cards display correctly
+
+Page is fully responsive
+
+Lighthouse score is 90+ during development
+
+Deliverable
+
+New homepage ready for review.
+
+Phase 2 — Product Portfolio
+
+Goal: create the products overview and individual product pages.
+
+Tasks
+
+Create /products page
+
+Create reusable product page template
+
+Create The Juice page
+
+Create Predara page
+
+Create FiSimHub page
+
+Create Atlas page
+
+Add screenshots/placeholders
+
+Add CTA sections
+
+Add FAQ sections
+
+Acceptance criteria
+
+All product pages use the same layout
+
+Product information is easy to scan
+
+CTAs are clear
+
+Pages are responsive
+
+SEO metadata is implemented
+
+Deliverable
+
+Complete product portfolio.
+
+Phase 3 — Lab & Journal
+
+Goal: make the company feel active and experimental.
+
+Tasks
+
+Create /lab page
+
+Create experiment cards
+
+Create /journal page
+
+Create journal entry template
+
+Add sample updates
+
+Add status indicators
+
+Acceptance criteria
+
+Lab page displays current experiments
+
+Journal page displays updates
+
+Cards are reusable
+
+Pages feel consistent with the rest of the site
+
+Deliverable
+
+Lab and Journal sections live.
+
+Phase 4 — About & Contact
+
+Goal: improve trust and company story.
+
+Tasks
+
+Create /about page
+
+Create /contact page
+
+Add company philosophy
+
+Add mission and vision
+
+Add contact form
+
+Create legal pages
+
+Acceptance criteria
+
+About page tells a clear story
+
+Contact form works
+
+Legal pages are accessible from footer
+
+Trust is improved without overwhelming the homepage
+
+Deliverable
+
+Complete company information section.
+
+Phase 5 — Polish & Optimization
+
+Goal: reach production quality.
+
+Tasks
+
+Optimize images
+
+Implement animations
+
+Improve loading performance
+
+Add SEO metadata
+
+Add Open Graph images
+
+Add analytics
+
+Test accessibility
+
+Test keyboard navigation
+
+Test reduced motion
+
+Cross-browser testing
+
+Mobile testing
+
+Acceptance criteria
+
+Lighthouse Performance ≥ 95
+
+Accessibility ≥ 95
+
+Best Practices ≥ 95
+
+SEO ≥ 95
+
+No layout shifts
+
+All pages load quickly
+
+Animations are subtle
+
+Site feels premium
+
+Deliverable
+
+Production-ready website.
+
+Final QA Checklist
+
+All links work
+
+All pages are responsive
+
+All images have alt text
+
+All buttons have hover states
+
+All forms work
+
+Navigation works with keyboard
+
+Reduced motion works
+
+SEO metadata is complete
+
+Open Graph previews look correct
+
+Analytics are tracking
+
+Lighthouse scores meet targets
+
+Site is deployed to production
+
+Definition of Done
+
+The Edison Labs website is considered complete when:
+
+A visitor understands the company within 10 seconds.
+
+Products are the primary focus.
+
+The site feels premium and engineered.
+
+The company feels active and experimental.
+
+Trust is established without overwhelming the user.
+
+Performance, accessibility, SEO, and responsiveness all meet high standards.
+
+The structure can scale as new products are added.
