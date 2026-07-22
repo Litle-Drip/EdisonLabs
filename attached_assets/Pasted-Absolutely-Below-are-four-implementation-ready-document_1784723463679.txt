@@ -1,0 +1,283 @@
+Absolutely. Below are four implementation-ready documents you can give directly to Replit. They are written as product requirements rather than brainstorming notes, so the developer can build from them without needing additional context.
+
+Document 1 — Product & Brand Strategy
+Objective
+
+Transform Edison Labs from a documentation-style company page into a premium software studio website that clearly communicates what the company builds, why it exists, and which products visitors should explore.
+
+Brand Positioning
+
+Company positioning statement
+
+Edison Labs is an independent software studio that designs practical digital products for emerging technology.
+
+Mission
+
+Build focused software tools that help people better understand, use, and interact with new technology.
+
+Vision
+
+Create a portfolio of independent products that solve specific problems with clarity, precision, and thoughtful engineering.
+
+Core Brand Attributes
+
+Independent
+
+Practical
+
+Engineered
+
+Experimental
+
+Trustworthy
+
+Minimal
+
+Optimistic
+
+Primary Audience
+
+Users evaluating Edison Labs products
+
+Developers and builders
+
+Crypto and technology enthusiasts
+
+Potential collaborators
+
+Future employees or contractors
+
+Investors or partners
+
+Messaging Hierarchy
+Homepage must communicate within 10 seconds:
+
+What Edison Labs is
+
+What Edison Labs builds
+
+Why it is different
+
+Which products are available
+
+Why visitors should trust it
+
+Primary headline
+Building practical software for emerging technology.
+Supporting copy
+
+Edison Labs develops independent digital products across blockchain, artificial intelligence, simulation, and emerging technology.
+
+Information Architecture
+
+Page
+
+	
+
+Purpose
+
+
+
+
+Home
+
+	
+
+Introduce Edison Labs and showcase products
+
+
+
+
+Products
+
+	
+
+Display all products in a portfolio format
+
+
+
+
+The Juice
+
+	
+
+Dedicated product landing page
+
+
+
+
+Predara
+
+	
+
+Dedicated product landing page
+
+
+
+
+FiSimHub
+
+	
+
+Dedicated product landing page
+
+
+
+
+Atlas
+
+	
+
+Dedicated product landing page
+
+
+
+
+Lab
+
+	
+
+Show experiments and prototypes
+
+
+
+
+Journal
+
+	
+
+Product updates and engineering notes
+
+
+
+
+About
+
+	
+
+Company story and philosophy
+
+
+
+
+Contact
+
+	
+
+Simple contact form or email
+
+Homepage Content Structure
+1. Hero section
+
+Content:
+
+Headline: “Building practical software for emerging technology.”
+
+Subheadline: “Independent products. Thoughtfully engineered.”
+
+Primary CTA: “Explore Products”
+
+Secondary CTA: “About Edison Labs”
+
+2. Featured products section
+
+Display product cards with:
+
+Product name
+
+One-sentence description
+
+Status badge (Live, Beta, Coming Soon, Prototype)
+
+Screenshot or product image
+
+Learn more button
+
+3. How we build section
+
+Three pillars:
+
+Ship deliberately. Build focused products with clear purpose.
+
+Build independently. Each product can stand on its own.
+
+Keep products focused. Solve one problem well.
+
+4. The Lab section
+
+Show current experiments such as:
+
+AI systems
+
+Prediction markets
+
+Simulation analytics
+
+Developer tools
+
+Productivity tools
+
+5. Recent activity section
+
+Display:
+
+Latest product update
+
+Latest journal entry
+
+Newest experiment
+
+Release notes
+
+6. Footer
+
+Include only:
+
+Products
+
+About
+
+Journal
+
+Contact
+
+Privacy Policy
+
+Terms
+
+Legal
+
+Product Card Copy
+The Juice
+
+Peer-to-peer blockchain challenges.
+
+Predara
+
+Prediction market intelligence tools.
+
+FiSimHub
+
+Simulation racing analytics and telemetry.
+
+Atlas
+
+Personal AI operating system.
+
+About Page Copy
+
+Edison Labs is an independent software studio focused on building practical digital products. We create focused tools around emerging technology, including blockchain, artificial intelligence, simulation, and developer infrastructure.
+
+Each product begins as an experiment. The best experiments become polished products.
+
+Brand Rules
+
+Do not position Edison Labs as only a crypto company.
+
+Do not use excessive startup buzzwords.
+
+Keep copy concise and direct.
+
+Products should be the primary focus.
+
+Legal language belongs in the footer or dedicated legal pages.
