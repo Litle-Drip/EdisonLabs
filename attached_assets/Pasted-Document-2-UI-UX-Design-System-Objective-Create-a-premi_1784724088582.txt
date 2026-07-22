@@ -1,0 +1,461 @@
+Document 2 — UI/UX Design System
+Objective
+
+Create a premium, minimal, engineering-focused visual system that is consistent across all pages.
+
+Design Principles
+
+Minimal but warm
+
+Engineered, not flashy
+
+Product-focused
+
+Accessible
+
+Consistent
+
+Fast-loading
+
+Color Palette
+
+Role
+
+	
+
+Color
+
+
+
+
+Background
+
+	
+
+#0B0D10
+
+
+
+
+Surface
+
+	
+
+#111418
+
+
+
+
+Primary text
+
+	
+
+#FFFFFF
+
+
+
+
+Secondary text
+
+	
+
+#B3BAC5
+
+
+
+
+Border
+
+	
+
+#222831
+
+
+
+
+Accent
+
+	
+
+#4DA3FF
+
+
+
+
+Accent hover
+
+	
+
+#6BB6FF
+
+
+
+
+Success
+
+	
+
+#22C55E
+
+
+
+
+Warning
+
+	
+
+#F59E0B
+
+Typography
+Font family
+
+Primary: Inter
+
+Fallback: system-ui, sans-serif
+
+Type scale
+
+Element
+
+	
+
+Size
+
+	
+
+Weight
+
+
+
+
+H1
+
+	
+
+64px desktop / 40px mobile
+
+	
+
+700
+
+
+
+
+H2
+
+	
+
+40px / 32px
+
+	
+
+700
+
+
+
+
+H3
+
+	
+
+28px / 24px
+
+	
+
+600
+
+
+
+
+Body
+
+	
+
+18px
+
+	
+
+400
+
+
+
+
+Small
+
+	
+
+14px
+
+	
+
+400
+
+Spacing System
+
+Use an 8px grid.
+
+Token
+
+	
+
+Value
+
+
+
+
+xs
+
+	
+
+8px
+
+
+
+
+sm
+
+	
+
+16px
+
+
+
+
+md
+
+	
+
+24px
+
+
+
+
+lg
+
+	
+
+32px
+
+
+
+
+xl
+
+	
+
+48px
+
+
+
+
+2xl
+
+	
+
+64px
+
+
+
+
+3xl
+
+	
+
+96px
+
+Layout
+
+Max content width: 1200px
+
+Centered container
+
+Section padding: 96px desktop, 64px mobile
+
+Card padding: 32px
+
+Border radius: 20px
+
+Components
+Buttons
+Primary button
+
+Background: Accent blue
+
+Text: White
+
+Height: 48px
+
+Padding: 24px horizontal
+
+Radius: 12px
+
+Hover: slightly lighter blue
+
+Secondary button
+
+Transparent background
+
+Border: 1px solid border color
+
+Text: White
+
+Hover: subtle background fill
+
+Product cards
+
+Card structure:
+
+Screenshot area
+
+Product name
+
+One-line description
+
+Status badge
+
+Learn more button
+
+Card styling:
+
+Background: surface color
+
+Border: 1px solid border color
+
+Radius: 24px
+
+Hover: translateY(-4px)
+
+Transition: 200ms ease
+
+Status badges
+
+Status
+
+	
+
+Style
+
+
+
+
+Live
+
+	
+
+Green
+
+
+
+
+Beta
+
+	
+
+Blue
+
+
+
+
+Coming Soon
+
+	
+
+Orange
+
+
+
+
+Prototype
+
+	
+
+Gray
+
+Motion Guidelines
+
+Allowed animations:
+
+Fade in on scroll
+
+Subtle card hover elevation
+
+Button hover transition
+
+Very subtle background gradient movement
+
+Do not use:
+
+Bouncing elements
+
+Spinning elements
+
+Large parallax effects
+
+Distracting motion
+
+Auto-playing video backgrounds
+
+Accessibility Requirements
+
+WCAG AA contrast compliance
+
+Keyboard navigation for all interactive elements
+
+Visible focus states
+
+Semantic HTML headings
+
+Alt text for all images
+
+Reduced motion support
+
+Minimum touch target size: 44px
+
+Responsive Breakpoints
+
+Breakpoint
+
+	
+
+Width
+
+
+
+
+Mobile
+
+	
+
+< 768px
+
+
+
+
+Tablet
+
+	
+
+768px – 1024px
+
+
+
+
+Desktop
+
+	
+
+1024px
+
+Mobile Requirements
+
+Single-column layout on mobile
+
+Product cards stack vertically
+
+Navigation collapses into hamburger menu
+
+Hero text scales appropriately
+
+Buttons are full-width when necessary
+
+Images are optimized for mobile
