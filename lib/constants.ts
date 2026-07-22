@@ -18,6 +18,7 @@ export const SOCIAL = {
 export const NAV_LINKS = [
   { href: '/#products', label: 'Products' },
   { href: '/lab', label: 'Lab' },
+  { href: '/journal', label: 'Journal' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
 ] as const
