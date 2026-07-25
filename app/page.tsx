@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* ── Hero ─────────────────────────────────────────── */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center pt-20 overflow-hidden z-10"
+        className="relative min-h-screen min-h-[100svh] flex items-center pt-20 overflow-hidden z-10"
       >
         <div className="max-w-content mx-auto px-6 md:px-12 w-full relative z-20">
           {/* Badge */}
