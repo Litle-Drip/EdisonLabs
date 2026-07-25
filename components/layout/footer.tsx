@@ -53,12 +53,12 @@ export function Footer() {
           </div>
 
           {/* Legal links */}
-          <div className="flex gap-6">
+          <div className="flex gap-x-6 gap-y-1 flex-wrap">
             {FOOTER_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-text-muted hover:text-white transition-colors duration-150 focus-ring-offset"
+                className="inline-flex items-center min-h-[44px] sm:min-h-0 text-text-muted hover:text-white transition-colors duration-150 focus-ring-offset"
               >
                 {link.label}
               </Link>

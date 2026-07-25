@@ -116,6 +116,19 @@ body {
   overflow: hidden;
 }
 
+/* ── Prevent iOS auto-zoom on input focus ──────────────
+   iOS Safari zooms the viewport whenever a focused form
+   control has a font-size below 16px. Force ≥16px on small
+   screens so focusing form fields never triggers a zoom.
+   Uses !important to win over Tailwind's text-size utilities. */
+@media (max-width: 640px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}
+
 /* ── Hero text glow ────────────────────────────────── */
 .accent-glow {
   color: var(--accent);

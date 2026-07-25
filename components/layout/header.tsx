@@ -70,7 +70,7 @@ export function Header() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-text-muted hover:text-white transition-colors p-2 rounded focus-ring"
+          className="md:hidden inline-flex items-center justify-center min-w-[44px] min-h-[44px] -mr-2 text-text-muted hover:text-white transition-colors rounded focus-ring"
           onClick={() => setMobileOpen((o) => !o)}
           aria-expanded={mobileOpen}
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
