@@ -376,8 +376,9 @@
     }
     .card-name-row {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 10px;
+      gap: 6px 10px;
       margin-bottom: 14px;
       position: relative; z-index: 1;
     }
@@ -1042,6 +1043,7 @@
       .hero-inner, .section-inner { padding: 0 20px; }
       .site-footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
       .nav-links { display: none; }
+      .products-grid { grid-template-columns: 1fr; }
       .pillars-grid { grid-template-columns: 1fr; }
       .orbit { display: none; }
     }
