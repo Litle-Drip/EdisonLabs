@@ -58,7 +58,7 @@ export function Header() {
           aria-label="Edison Labs home"
         >
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="Edison Labs"
             width={32}
             height={32}
