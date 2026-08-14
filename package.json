@@ -2,6 +2,9 @@
   "name": "edison-labs",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev --port 5000",
     "build": "next build",
