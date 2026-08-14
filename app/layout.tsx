@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/react'
 import { Header } from '@/components/layout/header'
@@ -40,6 +40,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: ['/og-image.png'],
   },
+  manifest: '/site.webmanifest',
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -53,6 +54,10 @@ export const metadata: Metadata = {
       { rel: 'icon', url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
   },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#4AAFE1',
 }
 
 export default function RootLayout({
