@@ -51,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
       <body className="font-sans bg-bg text-text-main min-h-screen overflow-x-hidden">
         {/* Fixed background decorations */}
         <div
