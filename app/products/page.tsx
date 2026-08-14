@@ -25,23 +25,21 @@ export default function ProductsPage() {
   return (
     <section className="relative z-10 pt-28 pb-section min-h-screen">
       <Container>
-        {/* Header */}
-        <FadeIn>
-          <div className="mb-16">
-            <p className="text-accent text-xs font-semibold uppercase tracking-[0.12em] mb-4">
-              Product Portfolio
-            </p>
-            <h1
-              className="font-black tracking-[-0.04em] text-white leading-tight mb-6"
-              style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
-            >
-              What We Build
-            </h1>
-            <p className="text-text-muted text-lg leading-relaxed max-w-[560px]">
-              Independent products. Each one solves a specific problem with clarity, precision, and thoughtful engineering.
-            </p>
-          </div>
-        </FadeIn>
+        {/* Header — visible on first paint */}
+        <div className="mb-16">
+          <p className="text-accent text-xs font-semibold uppercase tracking-[0.12em] mb-4">
+            Product Portfolio
+          </p>
+          <h1
+            className="font-black tracking-[-0.04em] text-white leading-tight mb-6"
+            style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
+          >
+            What We Build
+          </h1>
+          <p className="text-text-muted text-lg leading-relaxed max-w-[560px]">
+            Independent products. Each one solves a specific problem with clarity, precision, and thoughtful engineering.
+          </p>
+        </div>
 
         {/* Live products */}
         <FadeIn delay={0.05}>

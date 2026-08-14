@@ -3,13 +3,28 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { NAV_LINKS } from '@/lib/constants'
 import { MenuIcon, CloseIcon } from '@/components/ui/icons'
 import { cn } from '@/lib/utils'
 
+function isActive(href: string, pathname: string): boolean {
+  // Products uses a hash anchor on homepage; treat /products/* as the active section
+  if (href === '/#products') {
+    return pathname === '/products' || pathname.startsWith('/products/')
+  }
+  return pathname === href || (href.length > 1 && pathname.startsWith(href + '/'))
+}
+
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Close mobile nav whenever the route changes
+  useEffect(() => {
+    setMobileOpen(false)
+  }, [pathname])
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 50)
@@ -57,15 +72,25 @@ export function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-text-muted hover:text-accent text-xs font-medium uppercase tracking-[0.1em] transition-colors duration-150 py-3 px-1 min-h-[44px] inline-flex items-center focus-ring-offset"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const active = isActive(link.href, pathname)
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'relative text-xs font-medium uppercase tracking-[0.1em] transition-colors duration-150 py-3 px-1 min-h-[44px] inline-flex items-center focus-ring-offset',
+                  active ? 'text-accent' : 'text-text-muted hover:text-accent'
+                )}
+                aria-current={active ? 'page' : undefined}
+              >
+                {link.label}
+                {active && (
+                  <span className="absolute bottom-1.5 left-1 right-1 h-px bg-accent rounded-full opacity-60" />
+                )}
+              </Link>
+            )
+          })}
         </nav>
 
         {/* Mobile hamburger */}
@@ -83,16 +108,22 @@ export function Header() {
       {mobileOpen && (
         <div className="md:hidden bg-[rgba(11,13,16,0.97)] backdrop-blur-nav border-t border-border-default">
           <nav className="flex flex-col px-6 py-4 gap-1" aria-label="Mobile navigation">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-text-muted hover:text-accent text-sm font-medium uppercase tracking-[0.1em] transition-colors duration-150 py-4 min-h-[48px] flex items-center border-b border-border-default last:border-0 focus-ring"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const active = isActive(link.href, pathname)
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    'text-sm font-medium uppercase tracking-[0.1em] transition-colors duration-150 py-4 min-h-[48px] flex items-center border-b border-border-default last:border-0 focus-ring',
+                    active ? 'text-accent' : 'text-text-muted hover:text-accent'
+                  )}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {link.label}
+                </Link>
+              )
+            })}
           </nav>
         </div>
       )}
