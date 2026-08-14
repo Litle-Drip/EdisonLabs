@@ -1,0 +1,9 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "3AXHjBMor8V-Ugn4sTsEA"
+uri = "file://attached_assets/edison-labs-logo.svg"
+type = "image"
+title = "Edison Labs Logo (SVG) — v2"
+description = "Revised SVG with four red six-pointed stars in a vertical line inside the flask."
